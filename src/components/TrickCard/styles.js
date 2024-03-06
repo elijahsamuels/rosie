@@ -5,7 +5,10 @@ const styles = {
 		borderRadius: '5px',
 		display: "flex",
 		flexDirection: 'column',
-		alignItems: 'center'
+		alignItems: 'center',
+		margin: '5px',
+		padding: '5px',
+		boxShadow: '5px 5px 15px'
 	},
 
 	title: {
