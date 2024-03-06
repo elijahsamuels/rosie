@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Sit",
+    "photo": "./path/filename",
+    "video": "./path/filename",
+    "description": "this describes the trick",
+    "howTo": "how to teach this trick",
+    "difficulty": 7,
+    "likes": 0
+  },
+  {
+    "title": "Speak",
+    "photo": "./path/filename",
+    "video": "./path/filename",
+    "description": "this describes the trick",
+    "howTo": "how to teach this trick",
+    "difficulty": 4,
+    "likes": 3
+  },
+  {
+    "title": "Pretty",
+    "photo": "./path/filename",
+    "video": "./path/filename",
+    "description": "this describes the trick",
+    "howTo": "how to teach this trick",
+    "difficulty": 5,
+    "likes": 1001
+  }
+]
