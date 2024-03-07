@@ -8,7 +8,8 @@ const styles = {
 		alignItems: 'center',
 		margin: '5px',
 		padding: '5px',
-		boxShadow: '5px 5px 15px'
+		boxShadow: '5px 5px 15px',
+		maxWidth: '400px'
 	},
 
 	title: {
@@ -21,6 +22,7 @@ const styles = {
 
 	pawPrint: {
 		width: '25px',
+		cursor: 'pointer'
 	},
 
 	photo: {

@@ -1,0 +1,12 @@
+.welcome-container {
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+.welcomePhoto {
+  width: 400px;
+  filter: drop-shadow(15px 15px 15px rgb(0 0 0 / 0.7));
+  /* height: 50px; */
+}

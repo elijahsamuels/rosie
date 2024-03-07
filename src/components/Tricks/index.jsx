@@ -4,7 +4,9 @@ import TricksList from './TricksList.json'
 import styles from "./styles";
 
 const TrickCards = () => {
-	return TricksList.map((trick) => {
+  const sortedTricks = TricksList.sort((a, b) => a.title.localeCompare(b.title));
+
+  return sortedTricks.map((trick) => {
     return <TrickCard key={trick.title} trick={trick} />;
   });
 };
