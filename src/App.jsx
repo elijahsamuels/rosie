@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Welcome from "./components/Welcome";
 import Tricks from "./components/Tricks";
+import Photos from "./components/Photos";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/tricks" element={<Tricks />} />
+          <Route path="/photos" element={<Photos />} />
           <Route path="/" element={<Welcome />} />
         </Routes>
       </div>

@@ -34,6 +34,11 @@ const Navbar = () => {
               Tricks
             </Link>
           </li>
+          <li className='nav-item'>
+            <Link to='/photos' className='nav-link' onClick={toggleMenu}>
+              Photos
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
