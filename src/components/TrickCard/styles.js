@@ -9,7 +9,8 @@ const styles = {
 		margin: '5px',
 		padding: '5px',
 		boxShadow: '5px 5px 15px',
-		maxWidth: '400px'
+		maxWidth: '400px',
+		minWidth: '400px'
 	},
 
 	title: {
@@ -17,6 +18,7 @@ const styles = {
 	},
 
 	likes: {
+		textAlign: 'right'
 
 	},
 
@@ -26,15 +28,18 @@ const styles = {
 	},
 
 	photo: {
-
+		maxWidth: "150px",
 	},
-
+	
 	video: {
-
+		maxWidth: "150px",
+		border: "1px solid black",
+		borderRadius: "5px",
+		margin: "5px"
 	},
 
 	description: {
-
+    textAlign: 'left'
 	},
 
 	howTo: {

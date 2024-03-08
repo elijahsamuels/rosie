@@ -7,7 +7,7 @@ import Tricks from "./components/Tricks";
 import Photos from "./components/Photos";
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <>
       <Navbar />
@@ -22,6 +22,6 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 export default App;
