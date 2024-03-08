@@ -3,12 +3,12 @@ import get_slippers from "../../images/gif/get_slippers.gif"
 import scoot from "../../images/gif/scoot.gif"
 import sit_pretty from "../../images/gif/sit_pretty.gif"
 
-const categories = {
-	1: "Basic",
-	2: "Circus",
-	3: "Circus",
-	4: "Circus",
-}
+// const categories = {
+// 	1: "Basic",
+// 	2: "Circus",
+// 	3: "Circus",
+// 	4: "Circus",
+// }
 
 
 export const tricksData = [

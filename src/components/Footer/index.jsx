@@ -1,6 +1,6 @@
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+// import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { AiOutlineMail } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import { copyrightAndCurrentYear } from '../../utility'
 // import { CONSTANTS, LINKS } from '../../constants'
 import './styles.css';
