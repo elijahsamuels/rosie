@@ -31,10 +31,22 @@ accessibility:
   stage: monitor
   script:
     - echo "Running accessibility test..."
-  # variables:
-  #   a11y_urls: "https://about.gitlab.com https://rosiethebatdog.netlify.app"
+  variables:
+    a11y_urls: "https://about.gitlab.com https://rosiethebatdog.netlify.app"
   # include:
   #   - template: "./Accessibility.gitlab-ci.yml"
+  image: "$CI_TEMPLATE_REGISTRY_HOST/gitlab-org/ci-cd/accessibility:6.2.3"
+  script:
+    - /gitlab-accessibility.sh "$a11y_urls"
+  allow_failure: true
+  artifacts:
+    when: always
+    expose_as: 'Accessibility Reports'
+    paths: ['reports/']
+    reports:
+      accessibility: reports/gl-accessibility.json
+  rules:
+    - if: $a11y_urls
 
 lighthouse:
   stage: monitor
