@@ -44,7 +44,7 @@ accessibility:
     when: always
     expose_as: 'Accessibility Reports'
     paths: ['reports/']
-    name: accessibility_reports_$(date +%Y%m%d-%H%M%S).zip
+    name: accessibility_reports.zip
     reports:
       accessibility: reports/gl-accessibility.json
   rules:
