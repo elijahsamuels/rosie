@@ -22,7 +22,7 @@ lighthouse:
     - apt-get update && apt-get install -y nodejs npm chromium
     - export CHROME_PATH=/usr/bin/chromium
     - npm install -g lighthouse
-    - lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json
+    - lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json --no-sandbox
   allow_failure: true
 
 deploy:
