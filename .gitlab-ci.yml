@@ -1,7 +1,10 @@
 # .gitlab-ci.yml
 
+image: node:lts-bookworm-slim
+
 stages:
   - test
+  - monitoring
   - deploy
 
 test:
@@ -10,10 +13,14 @@ test:
     - echo "Running tests..."
   allow_failure: true
 
+accessibility:
+  stage: monitoring
+
 lighthouse:
-  stage: test
+  stage: monitoring
   script:
-    - apt-get update && apt-get install -y nodejs npm
+    - apt-get update && apt-get install -y nodejs npm 
+    - apt-get install -y google-chrome
     - export CHROME_PATH=/usr/bin/google-chrome
     - npm install -g lighthouse
     - lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json
