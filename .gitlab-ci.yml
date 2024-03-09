@@ -4,7 +4,7 @@ image: node:lts-bookworm-slim
 
 stages:
   - test
-  - monitoring
+  - monitor
   - deploy
 
 test:
@@ -13,11 +13,11 @@ test:
     - echo "Running tests..."
   allow_failure: true
 
-accessibility:
-  stage: monitoring
+# accessibility:
+#   stage: monitor
 
 lighthouse:
-  stage: monitoring
+  stage: monitor
   script:
     - apt-get update && apt-get install -y nodejs npm 
     - apt-get install -y google-chrome
