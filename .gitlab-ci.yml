@@ -27,8 +27,14 @@ integration:
     - echo "Running integration tests..."
   allow_failure: true
 
-# accessibility:
-#   stage: monitor
+stages:
+  - monitor
+  variables:
+    a11y_urls: "https://about.gitlab.com https://gitlab.com/users/sign_in"
+  include:
+    - template: "Verify/Accessibility.gitlab-ci.yml"
+  allow_failure: true
+
 lighthouse:
   stage: monitor
   image: node:lts-bookworm-slim

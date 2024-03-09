@@ -1,0 +1,31 @@
+# This is a test file. Probably won't work.
+FROM node:20.11.1-bookworm-slim@sha256:2440a04b7b2ec79fc73d1f5e06fd90ba4f29ac57c129ba7adc3b3b0836774b3c
+
+WORKDIR /lighthouse
+COPY package*.json ./
+
+# renovate: datasource=repology depName=debian_12/chromium versioning=loose
+ENV CHROMIUM_VERSION="122.0.6261.111-1~deb12u1"
+ENV NODE_ENV='production'
+# Update path so executable can be run globally
+ENV PATH="/lighthouse/node_modules/.bin:${PATH}"
+
+# Always install the latest version of all non-Chromium dependencies.
+# hadolint ignore=DL3008
+RUN apt-get update && \
+  apt-get -y install --no-install-recommends chromium=${CHROMIUM_VERSION} procps && \
+  rm -rf /var/lib/apt/lists/* && \
+  npm ci && \
+  # Create a non-privileged user
+  groupadd -r lhuser && useradd -r -g lhuser -G audio,video lhuser && \
+  mkdir -p /home/lhuser/Downloads && \
+  chown -R lhuser:lhuser /home/lhuser
+
+# Run as the non-privileged user
+USER lhuser
+
+LABEL org.opencontainers.image.licenses="Apache-2.0"
+LABEL org.opencontainers.image.source="https://gitlab.com/gitlab-ci-utils/lighthouse"
+LABEL org.opencontainers.image.title="lighthouse"
+LABEL org.opencontainers.image.url="https://gitlab.com/gitlab-ci-utils/lighthouse"
+
