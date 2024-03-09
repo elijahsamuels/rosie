@@ -43,9 +43,9 @@ accessibility:
   artifacts:
     when: always
     expose_as: 'Accessibility Reports'
-    paths: ['/reports/accessibility/']
+    paths: ['reports/']
     reports:
-      accessibility: /reports/accessibility/gl-accessibility.json
+      accessibility: reports/gl-accessibility.json
   rules:
     - if: $a11y_urls
 
