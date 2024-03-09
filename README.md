@@ -32,4 +32,4 @@ by changing the .git/config file to include BOTH repos:
 	url = https://gitlab.com/elijahsamuels/rosie.git
 ```
 
-you can use `git push` to push to both in one command
+you can use `git push` to push to both repos (Github & Gitlab) in one command
