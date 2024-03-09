@@ -9,6 +9,12 @@ test:
   script:
     - echo "Running tests..."
 
+lighthouse:
+  stage: test
+  script:
+    - npm install -g lighthouse
+    - lighthouse https://example.com --output json --output-path=./lighthouse-report.json
+
 deploy:
   stage: deploy
   script:
