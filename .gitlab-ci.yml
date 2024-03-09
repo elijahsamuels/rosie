@@ -20,10 +20,10 @@ lighthouse:
   image: node:lts-bookworm-slim
   script:
     - apt-get update && apt-get install -y nodejs npm chromium
-    - export CHROME_BIN=chromium-browser
+    - export CHROME_BIN=chromium
     - npm install -g lighthouse
     - groupadd -r lighthouse && useradd -r -g lighthouse lighthouse
-    - chown -R lighthouse:lighthouse /usr/bin/chromium-browser
+    - chown -R lighthouse:lighthouse /usr/bin/chromium
     - sudo -u lighthouse lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json --no-sandbox
   allow_failure: true
 
