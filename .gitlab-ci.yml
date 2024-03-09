@@ -15,13 +15,12 @@ test:
 
 # accessibility:
 #   stage: monitor
-
 lighthouse:
   stage: monitor
+  image: node:lts-bookworm-slim
   script:
-    - apt-get update && apt-get install -y nodejs npm 
-    - apt-get install -y google-chrome
-    - export CHROME_PATH=/usr/bin/google-chrome
+    - apt-get update && apt-get install -y nodejs npm chromium
+    - export CHROME_PATH=/usr/bin/chromium
     - npm install -g lighthouse
     - lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json
   allow_failure: true
