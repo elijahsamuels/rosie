@@ -1,36 +1,37 @@
 # .gitlab-ci.yml
 
 image: node:lts-bookworm-slim
-
+# turning off test and deploy to save resources
 stages:
-  - test
+  # - test
   - monitor
-  - deploy
+  # - deploy
 
-unit_test:
-  stage: test
-  script:
-    - echo "Running unit tests..."
-    - npm install
-    - npm run test
-  allow_failure: true
+# unit_test:
+#   stage: test
+#   script:
+#     - echo "Running unit tests..."
+#     - npm install
+#     - npm run test
+#   allow_failure: true
 
-e2e:
-  stage: test
-  script:
-    - echo "Running e2e tests..."
-  allow_failure: true
+# e2e:
+#   stage: test
+#   script:
+#     - echo "Running e2e tests..."
+#   allow_failure: true
 
-integration:
-  stage: test
-  script:
-    - echo "Running integration tests..."
-  allow_failure: true
+# integration:
+#   stage: test
+#   script:
+#     - echo "Running integration tests..."
+#   allow_failure: true
 
 accessibility:
   stage: monitor
   script:
     - echo "Running accessibility test..."
+    - echo "a11y_urls: $a11y_urls"  # Print the value of a11y_urls variable
   variables:
     a11y_urls: "https://about.gitlab.com https://rosiethebatdog.netlify.app"
   # include:
@@ -42,9 +43,9 @@ accessibility:
   artifacts:
     when: always
     expose_as: 'Accessibility Reports'
-    paths: ['reports/accessibility/']
+    paths: ['/reports/accessibility/']
     reports:
-      accessibility: reports/accessibility/gl-accessibility.json
+      accessibility: /reports/accessibility/gl-accessibility.json
   rules:
     - if: $a11y_urls
 
@@ -60,7 +61,7 @@ lighthouse:
     - su - lighthouse -c "lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json --no-sandbox"
   allow_failure: true
 
-deploy:
-  stage: deploy
-  script:
-    - echo "Deploying to production..."
+# deploy:
+#   stage: deploy
+#   script:
+#     - echo "Deploying to production..."
