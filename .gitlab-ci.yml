@@ -14,7 +14,7 @@ lighthouse:
   stage: test
   script:
     - apt-get update && apt-get install -y nodejs npm
-    - export CHROME_PATH=/path/to/chrome_or_chromium_executable
+    - export CHROME_PATH=/usr/bin/google-chrome
     - npm install -g lighthouse
     - lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json
   allow_failure: true
