@@ -46,6 +46,8 @@ accessibility:
     paths: ['reports/']
     reports:
       accessibility: reports/gl-accessibility.json
+  artifacts:
+    name: accessibility_reports_${CI_COMMIT_SHORT_SHA}_${CI_COMMIT_REF_SLUG}_$(date +%Y%m%d-%H%M%S).zip
   rules:
     - if: $a11y_urls
 
