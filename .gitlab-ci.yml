@@ -11,6 +11,7 @@ unit_test:
   stage: test
   script:
     - echo "Running unit tests..."
+    - npm install
     - npm run test
   allow_failure: true
 
