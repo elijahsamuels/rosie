@@ -12,6 +12,7 @@ test:
 lighthouse:
   stage: test
   script:
+    - apt-get update && apt-get install -y nodejs npm
     - npm install -g lighthouse
     - lighthouse https://example.com --output json --output-path=./lighthouse-report.json
 
