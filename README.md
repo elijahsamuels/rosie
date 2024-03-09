@@ -20,3 +20,5 @@ It correctly bundles React in production mode and optimizes the build for the be
 git add .
 git commit -m 'your message'
 git push && git push git@gitlab.com:elijahsamuels/rosie.git
+
+the above works. testing the .git/config file
