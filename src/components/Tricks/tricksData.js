@@ -10,7 +10,6 @@ import sit_pretty from "../../images/gif/sit_pretty.gif"
 // 	4: "Circus",
 // }
 
-
 export const tricksData = [
   {
     title: "Find Mommy/Daddy",
