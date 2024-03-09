@@ -22,7 +22,9 @@ lighthouse:
     - apt-get update && apt-get install -y nodejs npm chromium
     - export CHROME_BIN=chromium-browser
     - npm install -g lighthouse
-    - lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json --no-sandbox --chrome-flags="--headless"
+    - groupadd -r lighthouse && useradd -r -g lighthouse lighthouse
+    - chown -R lighthouse:lighthouse /usr/bin/chromium-browser
+    - sudo -u lighthouse lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json --no-sandbox
   allow_failure: true
 
 deploy:
