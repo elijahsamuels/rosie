@@ -3,14 +3,26 @@
 image: node:lts-bookworm-slim
 
 stages:
-  - test
+  - unit_test
   - monitor
   - deploy
 
 test:
-  stage: test
+  stage: unit_test
   script:
     - echo "Running tests..."
+  allow_failure: true
+
+e2e:
+  stage: unit_test
+  script:
+    - echo "Running e2e tests..."
+  allow_failure: true
+
+integration:
+  stage: unit_test
+  script:
+    - echo "Running integration tests..."
   allow_failure: true
 
 # accessibility:
@@ -22,6 +34,10 @@ lighthouse:
     - apt-get update && apt-get install -y nodejs npm chromium
     - export CHROME_BIN=chromium
     - npm install -g lighthouse
+    - echo "################################################################################"
+    - echo "netstat"
+    - netstat
+    - echo "################################################################################"
     - groupadd -r lighthouse && useradd -r -g lighthouse lighthouse
     - chown -R lighthouse:lighthouse /usr/bin/chromium
     - su - lighthouse -c "lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json --no-sandbox"
