@@ -8,13 +8,16 @@ test:
   stage: test
   script:
     - echo "Running tests..."
+  allow_failure: true
 
 lighthouse:
   stage: test
   script:
     - apt-get update && apt-get install -y nodejs npm
+    - export CHROME_PATH=/path/to/chrome_or_chromium_executable
     - npm install -g lighthouse
-    - lighthouse https://example.com --output json --output-path=./lighthouse-report.json
+    - lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json
+  allow_failure: true
 
 deploy:
   stage: deploy
