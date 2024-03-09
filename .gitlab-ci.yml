@@ -24,7 +24,7 @@ lighthouse:
     - npm install -g lighthouse
     - groupadd -r lighthouse && useradd -r -g lighthouse lighthouse
     - chown -R lighthouse:lighthouse /usr/bin/chromium
-    - sudo -u lighthouse lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json --no-sandbox
+    - su - lighthouse -c "lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json --no-sandbox"
   allow_failure: true
 
 deploy:
