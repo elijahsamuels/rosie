@@ -62,8 +62,10 @@ lighthouse:
     # Always save artifacts. This is needed if lighthouse is run configured to fail on certain criteria, and will ensure the report is saved.
     when: always
     # Save the lighthouse report, which by default is named for the site analyzed and the current time.
-    paths:
-      - localhost*.html
+    paths: ['reports/']
+    
+# paths:
+    #   - localhost*.html
   allow_failure: true
 
 # lighthouse:
