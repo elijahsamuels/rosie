@@ -33,7 +33,7 @@ accessibility:
     - echo "Running accessibility test..."
     - echo "a11y_urls: $a11y_urls"  # Print the value of a11y_urls variable
   variables:
-    a11y_urls: "https://about.gitlab.com https://rosiethebatdog.netlify.app"
+    a11y_urls: "https://rosiethebatdog.netlify.app https://rosiethebatdog.netlify.app/about https://rosiethebatdog.netlify.app/tricks https://rosiethebatdog.netlify.app/photos"
   # include:
   #   - template: "./Accessibility.gitlab-ci.yml"
   image: "$CI_TEMPLATE_REGISTRY_HOST/gitlab-org/ci-cd/accessibility:6.2.3"
@@ -44,23 +44,44 @@ accessibility:
     when: always
     expose_as: 'Accessibility Reports'
     paths: ['reports/']
-    name: accessibility_reports.zip
+    # name: accessibility_reports.zip
     reports:
-      accessibility: reports/gl-accessibility.json
+      accessibility: reports/gitlab-accessibility.json
   rules:
     - if: $a11y_urls
 
 lighthouse:
-  stage: monitor
-  image: node:lts-bookworm-slim
+  image: registry.gitlab.com/gitlab-ci-utils/lighthouse:latest
+  stage: test
   script:
-    - apt-get update && apt-get install -y nodejs npm chromium
-    - export CHROME_BIN=chromium
-    - npm install -g lighthouse
-    - groupadd -r lighthouse && useradd -r -g lighthouse lighthouse
-    - chown -R lighthouse:lighthouse /usr/bin/chromium
-    - su - lighthouse -c "lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json --no-sandbox"
+    # Start a local static server, serving the site in the ./site/ folder,
+    # piping the output to null so it is not displayed, and waiting
+    # until the server is available (port 3000 is the default for serve).
+    - serve ./site/ > /dev/null 2>&1 & wait-on http://localhost:3000/
+    # Run lighthouse against the test site in headless mode, but otherwise
+    # with the default settings.
+    - lighthouse http://localhost:3000 --chrome-flags="--headless"
+  artifacts:
+    # Always save artifacts. This is needed if lighthouse is run configured
+    # to fail on certain criteria, and will ensure the report is saved.
+    when: always
+    # Save the lighthouse report, which by default is named for the site
+    # analyzed and the current time.
+    paths:
+      - localhost*.html
   allow_failure: true
+
+# lighthouse:
+#   stage: monitor
+#   image: node:lts-bookworm-slim
+#   script:
+#     - apt-get update && apt-get install -y nodejs npm chromium
+#     - export CHROME_BIN=chromium
+#     - npm install -g lighthouse
+#     - groupadd -r lighthouse && useradd -r -g lighthouse lighthouse
+#     - chown -R lighthouse:lighthouse /usr/bin/chromium
+#     - su - lighthouse -c "lighthouse https://rosiethebatdog.netlify.app --output json --output-path=./lighthouse-report.json --no-sandbox"
+#   allow_failure: true
 
 # deploy:
 #   stage: deploy

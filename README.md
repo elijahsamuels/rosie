@@ -33,3 +33,23 @@ by changing the .git/config file to include BOTH repos:
 ```
 
 you can use `git push` to push to both repos (Github & Gitlab) in one command
+
+### Gitlab pipeline jobs
+
+- test
+	- unit
+		- runs component tests
+	- e2e
+		- runs end-to-end tests: currently nothing
+	- integration
+		- runs integration tests: currently nothing
+
+- monitor
+	- accessibility
+		- When this job finishes successfully, the artifact (file to download) is located in the job logs, and looks simliar to this: `location=https://gitlab.com/api/v4/jobs/6357625373/artifacts?artifact_format=raw&artifact_type=accessibility`. Once the download is complete, add the extension '.zip' and uncompress. 
+	- lighthouse
+		- currently not working
+
+- deploy
+	- currently nothing
+	- need to add a way to get this to automatically deploy to a host. Cloudflare?
