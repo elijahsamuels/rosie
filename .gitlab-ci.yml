@@ -52,7 +52,7 @@ accessibility:
 
 lighthouse:
   image: registry.gitlab.com/gitlab-ci-utils/lighthouse:latest
-  stage: test
+  stage: monitor
   script:
     # Start a local static server, serving the site in the ./site/ folder,
     # piping the output to null so it is not displayed, and waiting
