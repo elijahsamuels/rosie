@@ -64,8 +64,8 @@ lighthouse:
     expose_as: 'Lighthouse Reports'
     # Save the lighthouse report, which by default is named for the site analyzed and the current time.
     paths: ['reports/']
-    reports:
-      lighthouse: reports/gitlab-lighthouse.json
+    # reports:
+    #   lighthouse: reports/gitlab-lighthouse.json
 # paths:
     #   - localhost*.html
   allow_failure: true
