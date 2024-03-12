@@ -29,6 +29,9 @@ const styles = {
 
 	photo: {
 		maxWidth: "150px",
+		border: "1px solid black",
+		borderRadius: "5px",
+		margin: "5px"
 	},
 	
 	video: {

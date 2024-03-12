@@ -53,3 +53,9 @@ you can use `git push` to push to both repos (Github & Gitlab) in one command
 - deploy
 	- currently nothing
 	- need to add a way to get this to automatically deploy to a host. Cloudflare?
+
+
+### TODO:
+- pages/components to add:
+	- tricks to learn
+- add server (or something) to store state of likes

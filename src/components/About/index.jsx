@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import {aboutRosie} from  "./aboutRosie";
+import { aboutRosie } from "./aboutRosie";
 
 const AboutSubject = () => {
   const sections = [];
@@ -10,9 +10,7 @@ const AboutSubject = () => {
 
     sections.push(
       <section className="section" key={title}>
-				{title && (
-					<p className={"subtitle"}>{title}</p>
-				)}
+        {title && <p className={"subtitle"}>{title}</p>}
         <p className={"paragraph"}>{paragraph}</p>
       </section>
     );
