@@ -59,3 +59,6 @@ you can use `git push` to push to both repos (Github & Gitlab) in one command
 - pages/components to add:
 	- tricks to learn
 - add server (or something) to store state of likes
+
+- add more CSS to TrickCards
+	- something onHover, active, etc...

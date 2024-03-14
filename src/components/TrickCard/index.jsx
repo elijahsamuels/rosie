@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./styles";
+import "./styles.css";
 import pawPrint from "../../images/paw_print_large.svg";
 
 const TrickCard = ({ trick }) => {
@@ -21,45 +21,32 @@ const TrickCard = ({ trick }) => {
   };
 
   return (
-    <div style={styles.card}>
-      <div style={styles.title}>{title}</div>
-
-      <div style={styles.likes}>
+    <div className="card">
+      <div className="title">{title}</div>
+      <div className="likes">
         likes: {trickCount}
         <img
           src={pawPrint}
           alt="likes"
-          style={styles.pawPrint}
+          className="paw-print"
           onClick={handleClick}
         />
       </div>
 
-      {photo ? (
-        <div style={styles.photo}>
-          <img src={photo} alt={title} />
-        </div>
-      ) : null}
+      {photo && <img src={photo} alt={title} className="photo" />}
+      {video && <img src={video} alt={title} className="video" />}
 
-      {video ? (
-        <div>
-          <img src={video} alt={title} style={styles.video} />
-        </div>
-      ) : null}
-
-      <div>
-        <div style={styles.description}>
-          <strong>Description: </strong>
-          {description}
-        </div>
+      <div className="description">
+        <span>Description:</span>
+        {description}
       </div>
 
-      <div>
-        <div style={styles.howTo}>
-          <strong>How to: </strong>
-          {howTo}
-        </div>
+      <div className="how-to">
+        <strong>How to: </strong>
+        {howTo}
       </div>
-      <div style={styles.category}>Category: {category}</div>
+
+      <div className="category">Category: {category}</div>
     </div>
   );
 };

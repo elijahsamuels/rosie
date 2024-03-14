@@ -1,16 +1,58 @@
-import cross_paws from "../../images/gif/cross_paws.gif"
-import get_slippers from "../../images/gif/get_slippers.gif"
+import beCute from "../../images/gif/beCute.gif"
+import catchToy from "../../images/gif/catchToy.gif"
+import couchPlace from "../../images/gif/couchPlace.gif"
+import crawl from "../../images/gif/crawl.gif"
+import crossPaws from "../../images/gif/crossPaws.gif"
+import down from "../../images/gif/down.gif"
+import drinkWater from "../../images/gif/drinkWater.gif"
+import getSlippers from "../../images/gif/getSlippers.gif"
+import holdIt from "../../images/gif/holdIt.gif"
+import leaveIt from "../../images/gif/leaveIt.gif"
+import lookOutTheWindow from "../../images/gif/lookOutTheWindow.gif"
+import pullSocks from "../../images/gif/pullSocks.gif"
 import scoot from "../../images/gif/scoot.gif"
-import sit_pretty from "../../images/gif/sit_pretty.gif"
+import sitPretty from "../../images/gif/sitPretty.gif"
+import stand from "../../images/gif/stand.gif"
+import touch from "../../images/gif/touch.gif"
+import tuck from "../../images/gif/tuck.gif"
+import upOff from "../../images/gif/upOff.gif"
+import wave from "../../images/gif/wave.gif"
 
 // const categories = {
 // 	1: "Basic",
 // 	2: "Circus",
-// 	3: "Circus",
+// 	3: "Adorable",
 // 	4: "Circus",
 // }
 
 export const tricksData = [
+  {
+    title: "Couch and Place",
+    photo: couchPlace,
+    video: null,
+    description: "Rosie goes to either couch or place.",
+    howTo: "Coming soon...",
+    category: 'Adorable',
+    likes: 0
+  },
+  {
+    title: "Up and Off",
+    photo: upOff,
+    video: null,
+    description: "Rosie jumps up and off.",
+    howTo: "Coming soon...",
+    category: 'Basic',
+    likes: 0
+  },
+  {
+    title: "Be Cute",
+    photo: beCute,
+    video: null,
+    description: "Rosie rests her head on your knees.",
+    howTo: "Coming soon...",
+    category: 'Adorable',
+    likes: 0
+  },
   {
     title: "Find Mommy/Daddy",
     photo: null,
@@ -49,8 +91,8 @@ export const tricksData = [
   },
   {
     title: "Get Slippers",
-    photo: null,
-    video: get_slippers,
+    photo: getSlippers,
+    video: null,
     description: "Rosie retrives slippers.",
     howTo: "Coming soon...",
     category: 'Basic',
@@ -67,8 +109,8 @@ export const tricksData = [
   },
   {
     title: "Sit Pretty",
-    photo: null,
-    video: sit_pretty,
+    photo: sitPretty,
+    video: null,
     description: "Rosie sits up on her hind legs, balancing in a cute pose.",
     howTo: "With Rosie in a sitting position, hold a treat above her head, encouraging her to lift her front paws off the ground while balancing.",
     category: 'Circus',
@@ -94,7 +136,7 @@ export const tricksData = [
   },
   {
     title: "Leave it",
-    photo: null,
+    photo: leaveIt,
     video: null,
     description: "Rosie ignores items or treats on the ground when commanded.",
     howTo: "Place a treat on the ground and cover it with your hand. When Rosie shows no interest, reward her with a different treat.",
@@ -121,7 +163,7 @@ export const tricksData = [
   },
   {
     title: "Down",
-    photo: null,
+    photo: down,
     video: null,
     description: "Rosie lies down on command.",
     howTo: "With Rosie in a sitting position, hold a treat near her nose and slowly lower it to the ground, prompting her to lie down.",
@@ -130,7 +172,7 @@ export const tricksData = [
   },
   {
     title: "Crawl",
-    photo: null,
+    photo: crawl,
     video: null,
     description: "Rosie crawls forward with her belly on the ground.",
     howTo: "Hold a treat near Rosie's nose and slowly move it forward, encouraging her to crawl while keeping her belly on the ground.",
@@ -148,8 +190,8 @@ export const tricksData = [
   },
   {
     title: "Cross Paws",
-    photo: null,
-    video: cross_paws,
+    photo: crossPaws,
+    video: null,
     description: "Rosie crosses her front paws while sitting.",
     howTo: "With Rosie sitting, gently lift one of her front paws and guide it over the other, crossing them. Reward her for holding this position.",
     category: 'Basic',
@@ -157,8 +199,8 @@ export const tricksData = [
   },
   {
     title: "Scoot",
-    photo: null,
-    video: scoot,
+    photo: scoot,
+    video: null,
     description: "Rosie scoots backward while lying down.",
     howTo: "Encourage Rosie to lie down, then gently guide her hindquarters backward while rewarding her for movement.",
     category: 'Basic',
@@ -166,7 +208,7 @@ export const tricksData = [
   },
   {
     title: "Stand",
-    photo: null,
+    photo: stand,
     video: null,
     description: "Rosie stands up on her hind legs briefly.",
     howTo: "Hold a treat above Rosie's head, encouraging her to stand on her hind legs to reach it. Reward her for the action.",
@@ -175,7 +217,7 @@ export const tricksData = [
   },
   {
     title: "Drink Water",
-    photo: null,
+    photo: drinkWater,
     video: null,
     description: "Rosie drinks water on command.",
     howTo: "Point to the water bowl and say 'drink water' while encouraging Rosie to approach and drink.",
@@ -193,7 +235,7 @@ export const tricksData = [
   },
   {
     title: "Touch",
-    photo: null,
+    photo: touch,
     video: null,
     description: "Rosie touches your hand with her nose.",
     howTo: "Hold out your hand, and when Rosie touches it with her nose, reward her immediately. Repeat this action to reinforce the behavior.",
@@ -256,7 +298,7 @@ export const tricksData = [
   },
   {
     title: "Wave",
-    photo: null,
+    photo: wave,
     video: null,
     description: "Rosie waves her paws in a cute gesture.",
     howTo: "Encourage Rosie to sit pretty and wave her paws in the air. Reward her for completing the action.",
@@ -265,7 +307,7 @@ export const tricksData = [
   },
   {
     title: "Catch",
-    photo: null,
+    photo: catchToy,
     video: null,
     description: "Rosie catches a treat in her mouth.",
     howTo: "Throw a treat toward Rosie, saying 'catch,' and reward her if she catches it in her mouth.",
@@ -274,7 +316,7 @@ export const tricksData = [
   },
   {
     title: "Hold It",
-    photo: null,
+    photo: holdIt,
     video: null,
     description: "Rosie holds onto a toy or object for several seconds.",
     howTo: "Give Rosie a toy or object and say 'hold it,' then reward her for maintaining her grip until you say 'okay.'",
@@ -292,7 +334,7 @@ export const tricksData = [
   },
   {
     title: "Tuck",
-    photo: null,
+    photo: tuck,
     video: null,
     description: "Rosie crawls under your legs and stays there for a few seconds.",
     howTo: "Sit at the edge of a couch or chair and encourage Rosie to crawl under your legs. Reward her for staying in that position.",
@@ -319,7 +361,7 @@ export const tricksData = [
   },
   {
     title: "Pull Socks",
-    photo: null,
+    photo: pullSocks,
     video: null,
     description: "Rosie pulls socks off your feet.",
     howTo: "Put socks on loosely and encourage Rosie to pull them off your feet. Reward her for completing the action.",
@@ -328,7 +370,7 @@ export const tricksData = [
   },
   {
     title: "Look Out the Window",
-    photo: null,
+    photo: lookOutTheWindow,
     video: null,
     description: "Rosie rests her head on the couch and looks out the window.",
     howTo: "Encourage Rosie to lay on the couch and look out the window. Reward her for staying in that position.",
