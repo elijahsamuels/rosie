@@ -1,13 +1,16 @@
+@import "../../theme.css";
+
 /* this is close, but not 100% */
+
 .footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #5a5a5ab3; /* Adjust color as needed */
-  color: white;
+  background-color: var(--background-light);
+  color: var(--font-dark);
   text-align: center;
-  padding: 10px 0; /* Adjust padding as needed */
+  padding: 10px 0;
 }
 
 .content-above-footer {
@@ -19,14 +22,14 @@
 }
 
 .social-links a {
-  color: #333;
+  color: var(--font-dark);
   font-size: 20px;
   margin: 0 10px;
 	transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #1DA1F2;
+	color: var(--purple-dark);
 }
 
 .footer-info {
@@ -39,10 +42,11 @@
 }
 
 .footer-info a {
-  color: #333;
+  color: var(--font-dark);
   text-decoration: none;
+	transition: all 0.3s ease;
 }
 
 .footer-info a:hover {
-  color: #1DA1F2;
+	color: var(--purple-dark);
 }
