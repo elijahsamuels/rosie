@@ -26,7 +26,7 @@ const Navbar = () => {
           </li>
           <li className='nav-item'>
             <Link to='/about' className='nav-link' onClick={toggleMenu}>
-              About
+              About Rosie
             </Link>
           </li>
           <li className='nav-item'>
