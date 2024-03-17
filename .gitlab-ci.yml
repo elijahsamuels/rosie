@@ -4,7 +4,7 @@ image: node:lts-bookworm-slim
 # turning off test and deploy to save resources
 stages:
   # - test
-  # - monitor
+  - monitor
   - performance_test
   # - deploy
 
@@ -58,6 +58,7 @@ accessibility:
       accessibility: reports/gitlab-accessibility.json
   rules:
     - if: $a11y_urls
+      when: manual
 
 lighthouse:
   image: registry.gitlab.com/gitlab-ci-utils/lighthouse:latest
@@ -78,6 +79,16 @@ lighthouse:
 # paths:
     #   - localhost*.html
   allow_failure: true
+  rules:
+    when: manual
+
+
+
+
+
+
+# DONT USE THE ONE BELOW
+
 
 # lighthouse:
 #   stage: monitor
