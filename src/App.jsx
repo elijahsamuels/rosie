@@ -5,7 +5,7 @@ import About from "./components/About";
 import Welcome from "./components/Welcome";
 import Tricks from "./components/Tricks";
 import Picks from "./components/Picks";
-import Photos from "./components/Photos";
+import Media from "./components/Media";
 import "./App.css";
 
 const App = () => {
@@ -17,11 +17,13 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/picks" element={<Picks />} />
           <Route path="/tricks" element={<Tricks />} />
-          <Route path="/photos" element={<Photos />} />
+          <Route path="/media" element={<Media />} />
           <Route path="/" element={<Welcome />} />
         </Routes>
       </div>
-      <Footer />
+      <div className='footer-container'>
+        <Footer />
+      </div>
     </>
   );
 };
