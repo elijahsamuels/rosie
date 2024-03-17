@@ -4,7 +4,7 @@ image: node:lts-bookworm-slim
 # turning off test and deploy to save resources
 stages:
   # - test
-  - monitor
+  # - monitor
   - performance_test
   # - deploy
 
@@ -34,7 +34,7 @@ k6:
     name: grafana/k6
     entrypoint: [""]
   script:
-    - k6
+    - k6 run script.js #--quiet
 
 accessibility:
   stage: monitor
