@@ -40,6 +40,17 @@
 	margin: 5px;
 }
 
+.instagram {
+	width: 400px;
+	max-width: 400px;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 5px;
+}
+.instagram > div > Header {
+	display: none;
+}
+
 .video {
 	width: 150px;
 	border: 1px solid black;
