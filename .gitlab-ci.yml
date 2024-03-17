@@ -34,7 +34,7 @@ k6:
     name: grafana/k6
     entrypoint: [""]
   script:
-    - k6 run script.js #--quiet
+    - k6 run script.js
 
 accessibility:
   stage: monitor
