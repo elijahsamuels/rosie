@@ -5,6 +5,7 @@ image: node:lts-bookworm-slim
 stages:
   # - test
   - monitor
+  - performance_test
   # - deploy
 
 # unit_test:
@@ -26,6 +27,14 @@ stages:
 #   script:
 #     - echo "Running integration tests..."
 #   allow_failure: true
+
+k6:
+  stage: performance_test
+  image: 
+    name: grafana/k6
+    entrypoint: [""]
+  script:
+    - k6
 
 accessibility:
   stage: monitor
