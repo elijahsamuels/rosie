@@ -1,4 +1,6 @@
-.pick-container {
+.pick-container {}
+
+.pick-card {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -19,4 +21,5 @@
 
 .pick-image {
 	max-width: 200px;
+	max-height: 200px;
 }

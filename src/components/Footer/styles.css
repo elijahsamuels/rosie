@@ -2,14 +2,30 @@
 
 /* this is close, but not 100% */
 
-.footer {
+.footer1 {
+	z-index: 2;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: var(--background-light);
+  /* background-color: var(--background-light); */
   color: var(--font-dark);
   text-align: center;
+  padding: 10px 0;
+}
+
+.footer2 {
+	z-index: 2;
+  /* position: fixed; */
+  /* left: 0; */
+  /* bottom: 0; */
+  width: 200px;
+	/* border-radius: 50px 50px 0px 0px; */
+	/* background: rgb(255,255,255);
+	background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); */
+  background-color: white;
+  color: var(--font-dark);
+	text-align: center;
   padding: 10px 0;
 }
 

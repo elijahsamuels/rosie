@@ -8,12 +8,12 @@ const copyrightAndCurrentYear = () => {
   return `© ${date.getFullYear()}`;
 };
 
-
 const { instagram } = links;
 
 const Footer = () => {
   return (
-    <footer className='footer'> 
+    // <footer className='footer1'> 
+    <footer className='footer2'> 
       <div className="social-links">
         <a href={instagram}><FaInstagram /></a>
         <a href="mailto:elijahsamuels@gmail.com"><AiOutlineMail /></a>
