@@ -31,7 +31,7 @@ stages:
 k6-loadtest-local:
   stage: performance_test
   image: 
-    name: grafana/k6
+    name: grafana/k6:latest
     entrypoint: [""]
   script:
     - k6 run ./scripts/performance-test.js
@@ -39,7 +39,7 @@ k6-loadtest-local:
 k6-loadtest-cloud:
   stage: performance_test
   image: 
-    name: grafana/k6
+    name: grafana/k6:latest
     entrypoint: [""]
   script:
     - k6 cloud ./scripts/performance-test.js
