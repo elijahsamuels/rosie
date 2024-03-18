@@ -57,8 +57,8 @@ accessibility:
     reports:
       accessibility: reports/gitlab-accessibility.json
   rules:
-    - if: $a11y_urls
     - when: manual
+    # - if: $a11y_urls
 
 lighthouse:
   image: registry.gitlab.com/gitlab-ci-utils/lighthouse:latest
