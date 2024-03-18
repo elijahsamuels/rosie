@@ -28,13 +28,25 @@ stages:
 #     - echo "Running integration tests..."
 #   allow_failure: true
 
-k6:
+k6-loadtest-local:
   stage: performance_test
   image: 
     name: grafana/k6
     entrypoint: [""]
   script:
-    - k6 #run script.js
+    - k6 run ./scripts/performance-test.js
+
+k6-loadtest-cloud:
+  stage: performance_test
+  image: 
+    name: grafana/k6
+    entrypoint: [""]
+  script:
+    - k6 run ./scripts/performance-test.js
+  rules:
+    - when: manual
+
+
 
 accessibility:
   stage: monitor
