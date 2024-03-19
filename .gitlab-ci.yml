@@ -1,4 +1,6 @@
 # .gitlab-ci.yml
+# templates
+# https://gitlab.com/gitlab-org/gitlab/-/tree/master/lib/gitlab/ci/templates/Jobs
 
 image: node:lts-bookworm-slim
 # turning off test and deploy to save resources
@@ -31,6 +33,8 @@ integration:
   script:
     - echo "Running integration tests..."
   allow_failure: true
+  rules:
+    - when: manual
 
 k6-loadtest-local:
   stage: performance_test
@@ -98,8 +102,37 @@ lighthouse:
   rules:
     - when: manual
 
-include:
-- template: Security/Secret-Detection.gitlab-ci.yml
+# include:
+# - template: Security/Secret-Detection.gitlab-ci.yml
+
+variables:
+  SECURE_ANALYZERS_PREFIX: "$CI_TEMPLATE_REGISTRY_HOST/security-products"
+  SECRET_DETECTION_IMAGE_SUFFIX: ""
+
+  SECRETS_ANALYZER_VERSION: "5"
+  SECRET_DETECTION_EXCLUDED_PATHS: ""
+
+.secret-analyzer:
+  stage: test
+  image: "$SECURE_ANALYZERS_PREFIX/secrets:$SECRETS_ANALYZER_VERSION$SECRET_DETECTION_IMAGE_SUFFIX"
+  services: []
+  allow_failure: true
+  variables:
+    GIT_DEPTH: "50"
+  # `rules` must be overridden explicitly by each child job
+  # see https://gitlab.com/gitlab-org/gitlab/-/issues/218444
+  artifacts:
+    reports:
+      secret_detection: gl-secret-detection-report.json
+
+secret_detection:
+  extends: .secret-analyzer
+  rules:
+    - if: $SECRET_DETECTION_DISABLED == 'true' || $SECRET_DETECTION_DISABLED == '1'
+      when: never
+    - if: $CI_COMMIT_BRANCH
+  script:
+    - /analyzer run
 
 
 
