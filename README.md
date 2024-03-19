@@ -62,3 +62,11 @@ you can use `git push` to push to both repos (Github & Gitlab) in one command
 
 - add more CSS to TrickCards
 	- something onHover, active, etc...
+
+
+- Pipeline TODOS 
+	- Auto Secret Detection
+	- Auto SAST (Static Application Security Testing)
+	- Auto DAST (Dynamic Application Security Testing)
+	- Auto Deploy
+
