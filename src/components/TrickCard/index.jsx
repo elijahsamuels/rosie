@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { InstagramEmbed } from "react-social-media-embed";
 import "./styles.css";
 
@@ -15,7 +15,7 @@ const TrickCard = ({ data }) => {
 
   return (
     <div className="card">
-      <div className="title">{title}</div>
+      <div className="card-title">{title}</div>
 
       {photo && <img src={photo} alt={title} className="photo" />}
       {video && <img src={video} alt={title} className="video" />}

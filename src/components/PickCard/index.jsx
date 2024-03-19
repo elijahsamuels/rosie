@@ -22,7 +22,7 @@ const TrickCard = ({ trick }) => {
 
   return (
     <div className="card">
-      <div className="title">{title}</div>
+      <div className="card-title">{title}</div>
       <div className="likes">
         likes: {trickCount}
         <img
