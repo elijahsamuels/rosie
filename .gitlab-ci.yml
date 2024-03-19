@@ -3,30 +3,34 @@
 image: node:lts-bookworm-slim
 # turning off test and deploy to save resources
 stages:
-  # - test
+  - test
   - monitor
   - performance_test
   # - deploy
 
-# unit_test:
-#   stage: test
-#   script:
-#     - echo "Running unit tests..."
-#     - npm install
-#     - npm run test
-#   allow_failure: true
+unit_test:
+  stage: test
+  script:
+    - echo "Running unit tests..."
+    - npm install
+    - npm run test
+  allow_failure: true
+  rules:
+    - when: manual
 
-# e2e:
-#   stage: test
-#   script:
-#     - echo "Running e2e tests..."
-#   allow_failure: true
+e2e:
+  stage: test
+  script:
+    - echo "Running e2e tests..."
+  allow_failure: true
+  rules:
+    - when: manual
 
-# integration:
-#   stage: test
-#   script:
-#     - echo "Running integration tests..."
-#   allow_failure: true
+integration:
+  stage: test
+  script:
+    - echo "Running integration tests..."
+  allow_failure: true
 
 k6-loadtest-local:
   stage: performance_test
