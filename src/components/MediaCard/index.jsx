@@ -11,8 +11,8 @@ const MediaCard = ({ data }) => {
     video = "",
     instagramURL = "",
     description = "",
-    howTo = "",
-    category = "Basic",
+    // howTo = "",
+    // category = "Basic",
   } = data;
 
   return (
