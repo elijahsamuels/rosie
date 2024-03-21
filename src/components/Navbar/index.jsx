@@ -46,6 +46,11 @@ const Navbar = () => {
               Media
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/why" className="nav-link" onClick={toggleMenu}>
+              Why?
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

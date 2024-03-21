@@ -6,6 +6,7 @@ import Welcome from "./components/Welcome";
 import Tricks from "./components/Tricks";
 import Picks from "./components/Picks";
 import Media from "./components/Media";
+import Why from "./components/Why";
 import "./App.css";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/picks" element={<Picks />} />
           <Route path="/tricks" element={<Tricks />} />
           <Route path="/media" element={<Media />} />
+          <Route path="/why" element={<Why />} />
           <Route path="/" element={<Welcome />} />
         </Routes>
       </div>
