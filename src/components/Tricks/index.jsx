@@ -58,12 +58,28 @@ const Tricks = () => {
       </>
     );
   };
+  const MiscTrickCards = () => {
+    const sortedTricks = tricksData
+      .sort((a, b) => a.title.localeCompare(b.title))
+      .filter((trick) => trick.category !== "Circus" && trick.category !== "Basic")
+			.filter((trick) => trick.description.includes(searchString) || trick.title.includes(searchString));
+			
+    return (
+      <>
+        <div style={styles.title}>Misc Tricks</div>
+        {sortedTricks.map((trick) => {
+          return <TrickCard key={trick.title} data={trick} />;
+        })}
+      </>
+    );
+  };
 
   return (
     <div style={styles.container}>
       <Search searchString={searchString} handleChange={handleChange} />
       <BasicTrickCards />
       <CircusTrickCards />
+      <MiscTrickCards />
     </div>
   );
 };
