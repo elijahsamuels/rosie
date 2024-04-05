@@ -7,7 +7,12 @@ const {
 // https://docs.gitlab.com/ee/api/graphql/reference/#pipeline
 export const getGitlabPipelineDataGraphQL = async () => {
   let data = JSON.stringify({
-    query: `query { project(fullPath: "elijahsamuels/rosie") { pipelines(last: 25) { nodes { id status failureReason createdAt updatedAt stages { nodes { name status } } jobArtifacts { downloadPath fileType name size expireAt} } } } }`,
+    query: `query { project(fullPath: "elijahsamuels/rosie") { pipelines(first: 25) { nodes { id status failureReason createdAt updatedAt stages { nodes { name status jobs {
+			nodes {
+				name
+			}
+		}
+} } jobArtifacts { downloadPath fileType name size expireAt} } } } }`,
     variables: {},
   });
 
@@ -26,7 +31,7 @@ export const getGitlabPipelineDataGraphQL = async () => {
     .request(config)
     .then((response) => {
 			const { data } = response.data;
-      // console.log(response.data);
+      console.log(response.data);
       // console.log(JSON.stringify(response.data));
 			return data
     })

@@ -38,6 +38,20 @@ const Why = () => {
     });
   };
 
+	const parseDate = (dateString) => {
+
+		return dateString.replace('T', ' ').replace('Z', ' ') // "2024-04-05T03:32:02Z"
+		
+		// const year = new Date(dateString).getFullYear()
+		// const month = new Date(dateString).getMonth()
+		// const day = new Date(dateString).getDate()
+		// const hours = new Date(dateString).getHours()
+		// const minutes = new Date(dateString).getMinutes()
+		
+		
+		// return `${year} / ${month} / ${day} @ ${hours}:${minutes}`
+	}
+
   const Loading = () => {
     return (
       <>
@@ -58,7 +72,9 @@ const Why = () => {
               <th>Index</th>
               <th>Status</th>
               <th>Stage</th>
+              <th>Jobs from Stage</th>
               <th>Failure Reason</th>
+              <th>Job Run Date/Time</th>
               <th>Artifact Link</th>
             </tr>
           </thead>
@@ -71,6 +87,8 @@ const Why = () => {
   };
 
   const JobDataRow = () => {
+
+		console.log('pipelineData:', pipelineData);
     return pipelineData.map((node, index) => {
       return (
         <React.Fragment key={index}>
@@ -78,7 +96,10 @@ const Why = () => {
             <td className="index">{index + 1}</td>
             <td className="status">{node.status}</td>
             <td className="stage">{node.stages.nodes[0]?.name || null}</td>
+            <td className="stage">{node.stages.nodes.map(node => node.jobs.nodes.map(subNode => `${subNode.name} `)) || null}</td>
+            {/* <td className="stage">{node.stages.nodes[0]?.stages || null}</td>.map(job => job.name */}
             <td className="failureReason">{node.failureReason || "N/A"}</td>
+            <td className="datetime">{parseDate(node.createdAt) || "N/A"}</td>
             <td className="link">
               <a
                 href={`https://gitlab.com${node.jobArtifacts[0]?.downloadPath}`}>
