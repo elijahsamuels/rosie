@@ -18,7 +18,8 @@ const AboutSubject = () => {
 
   return sections;
 };
-
+const ws = new WebSocket('ws://localhost:8080');
+console.log('ws:', ws);
 const About = () => {
   return (
     <div className="container">
