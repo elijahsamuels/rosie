@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import { fetchPipelineData, fetchJobData } from "../../utils/getGitlabData";
 import { getGitlabPipelineDataGraphQL} from "../../utils/getGitlabPipelineDataGraphQL";
 import { paragraphs } from "./constants";
-import dogLoading from '../../images/dogLoading.gif'
+import Loading from '../Loading';
 import "./styles.css";
 
 const Why = () => {
@@ -51,17 +51,6 @@ const Why = () => {
 		
 		// return `${year} / ${month} / ${day} @ ${hours}:${minutes}`
 	}
-
-  const Loading = () => {
-    return (
-      <>
-        <div className="loading-container">
-          <img src={dogLoading} alt="loading" className="dog-loading" />
-        </div>
-        <div className="loading-container">Loading . . .</div>
-      </>
-    );
-  };
 
   const JobDataTable = () => {
     return (
@@ -122,7 +111,6 @@ const Why = () => {
       <div className="paragraph">
         <WhyParagraphs />
       </div>
-
       {(isLoading && <Loading />) || <JobDataTable />}
     </div>
   );
