@@ -7,9 +7,3 @@
 .dog-loading {
   width: 200px;
 }
-
-.job-data-table {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}

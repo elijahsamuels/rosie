@@ -1,15 +1,76 @@
-.loading-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-
-.dog-loading {
-  width: 200px;
-}
-
 .job-data-table {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+
+.icon {
+	margin: 0px 5px;
+	padding: 2px 6px;
+	border: 2px solid black;
+	border-radius: 20px;
+
+}
+
+.e2e {
+	border: 2px solid red;
+	border-radius: 20px;
+	background-color: red;
+	color: white;
+}
+
+.integration {
+	border: 2px solid blue;
+	border-radius: 20px;
+	background-color: blue;
+	color: white;
+}
+
+.secret-detection {
+	border: 2px solid green;
+	border-radius: 20px;
+	background-color: green;
+	color: white;
+}
+
+.unit-test {
+	border: 2px solid purple;
+	border-radius: 20px;
+	background-color: purple;
+	color: white;
+}
+
+.accessibility {
+	border: 2px solid orangered;
+	border-radius: 20px;
+	background-color: orangered;
+	color: white;
+}
+
+.lighthouse {
+	border: 2px solid gray;
+	border-radius: 20px;
+	background-color: gray;
+	color: white;
+}
+
+.k6 {
+	border: 2px solid darkgreen;
+	border-radius: 20px;
+	background-color: darkgreen;
+	color: white;
+}
+
+.k6-loadtest-cloud {
+	border: 2px solid lightblue;
+	border-radius: 20px;
+	background-color: lightblue;
+	color: black;
+}
+
+.k6-loadtest-local {
+	border: 2px solid darkblue;
+	border-radius: 20px;
+	background-color: darkblue;
+	color: white;
 }
