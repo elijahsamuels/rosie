@@ -1,18 +1,13 @@
 import axios from "axios";
+import { pipelinesQuery } from './graphQLQueries'
 const {
   REACT_APP_GITLAB_API_TOKEN: ACCESS_TOKEN,
 } = process.env;
 
-
 // https://docs.gitlab.com/ee/api/graphql/reference/#pipeline
 export const getGitlabPipelineDataGraphQL = async () => {
   let data = JSON.stringify({
-    query: `query { project(fullPath: "elijahsamuels/rosie") { pipelines(first: 25) { nodes { id status failureReason createdAt updatedAt stages { nodes { name status jobs {
-			nodes {
-				name
-			}
-		}
-} } jobArtifacts { downloadPath fileType name size expireAt} } } } }`,
+		query: pipelinesQuery,
     variables: {},
   });
 
@@ -31,7 +26,7 @@ export const getGitlabPipelineDataGraphQL = async () => {
     .request(config)
     .then((response) => {
 			const { data } = response.data;
-      // console.log(response.data);
+      console.log('Pipeline.nodes', response.data.data.project.pipelines.nodes);
       // console.log(JSON.stringify(response.data));
 			return data
     })

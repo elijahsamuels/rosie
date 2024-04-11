@@ -7,7 +7,7 @@ import Tricks from "./components/Tricks";
 import Picks from "./components/Picks";
 import Media from "./components/Media";
 import Why from "./components/Why";
-import WebRTCComponent from "./components/WebRTCComponent";
+// import WebRTCComponent from "./components/WebRTCComponent";
 import "./App.css";
 
 const App = () => {

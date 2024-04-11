@@ -67,8 +67,12 @@ you can use `git push` to push to both repos (Github & Gitlab) in one command
 
 - Pipeline TODOS 
 	- Auto Secret Detection
+		- https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Jobs/Secret-Detection.latest.gitlab-ci.yml
 	- Auto Dependency Scanning
+		- https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Jobs/Dependency-Scanning.gitlab-ci.yml
 	- Auto SAST (Static Application Security Testing)
+		- https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Jobs/SAST.gitlab-ci.yml
 	- Auto DAST (Dynamic Application Security Testing)
+		- https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Jobs/DAST-Default-Branch-Deploy.gitlab-ci.yml
 	- Auto Deploy
-
+		- https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Jobs/Deploy.latest.gitlab-ci.yml
