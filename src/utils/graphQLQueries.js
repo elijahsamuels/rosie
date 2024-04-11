@@ -1,3 +1,5 @@
+// https://gitlab.com/-/graphql-explorer
+
 export const pipelinesQuery = `
 query {
 	project(fullPath: "elijahsamuels/rosie") {
@@ -30,3 +32,38 @@ query {
 		}
 	}
 }`;
+
+export const pipelinesQuery2 = `
+{
+  project(fullPath: "elijahsamuels/rosie") {
+    jobs(first: 5) {
+      nodes {
+        name
+        kind
+        id
+        createdAt
+        browseArtifactsPath
+        artifacts(last: 1) {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+        failureMessage
+        pipeline {
+          detailedStatus {
+            id
+          }
+        }
+        runner {
+          description
+        }
+        status
+        allowFailure
+        webPath
+      }
+    }
+  }
+}`
+	

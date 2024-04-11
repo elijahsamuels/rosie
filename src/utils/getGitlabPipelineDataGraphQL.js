@@ -26,7 +26,7 @@ export const getGitlabPipelineDataGraphQL = async () => {
     .request(config)
     .then((response) => {
 			const { data } = response.data;
-      console.log('Pipeline.nodes', response.data.data.project.pipelines.nodes);
+      // console.log('Pipeline.nodes', response.data.data.project.pipelines.nodes);
       // console.log(JSON.stringify(response.data));
 			return data
     })

@@ -100,8 +100,9 @@ const Why = () => {
   //   },
   // ];
 
-	const iconGenerator = (name) => {
-		return <span className={`${iconMap[name].class} icon`}>{iconMap[name].shortName} </span>;
+	const iconGenerator = (name, index) => {
+		// console.log('index:', index);
+		return <span key={index} className={`${iconMap[name].class} icon`}>{iconMap[name].shortName} </span>;
   };
 
   const JobDataTable = () => {
@@ -146,7 +147,7 @@ const Why = () => {
 							an
 						
 						*/}
-            <td className="job-from-stage">{node.stages.nodes.map(node => node.jobs.nodes.map(subNode => iconGenerator(subNode.name) )) || null}</td>
+            <td className="job-from-stage">{node.stages.nodes.map(node => node.jobs.nodes.map((subNode, index) => iconGenerator(subNode.name, index) )) || null}</td>
             {/* <td className="stage">{node.stages.nodes[0]?.stages || null}</td>.map(job => job.name */}
             <td className="failureReason">{node.failureReason || "N/A"}</td>
             <td className="datetime">{parseDate(node.createdAt) || "N/A"}</td>

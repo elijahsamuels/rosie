@@ -1,22 +1,25 @@
-import beCute from "../../images/gif/beCute.gif";
-import catchToy from "../../images/gif/catchToy.gif";
-import couchPlace from "../../images/gif/couchPlace.gif";
-import crawl from "../../images/gif/crawl.gif";
-import crossPaws from "../../images/gif/crossPaws.gif";
-import down from "../../images/gif/down.gif";
-import drinkWater from "../../images/gif/drinkWater.gif";
-import getSlippers from "../../images/gif/getSlippers.gif";
-import holdIt from "../../images/gif/holdIt.gif";
-import leaveIt from "../../images/gif/leaveIt.gif";
-import lookOutTheWindow from "../../images/gif/lookOutTheWindow.gif";
-import pullSocks from "../../images/gif/pullSocks.gif";
-import scoot from "../../images/gif/scoot.gif";
-import sitPretty from "../../images/gif/sitPretty.gif";
-import stand from "../../images/gif/stand.gif";
-import touch from "../../images/gif/touch.gif";
-import tuck from "../../images/gif/tuck.gif";
-import upOff from "../../images/gif/upOff.gif";
-import wave from "../../images/gif/wave.gif";
+// removing images because it downloads 100-200MB... that's a no...
+// even the instagram component is a bit much. should look into a better way.
+
+// import beCute from "../../images/gif/beCute.gif";
+// import catchToy from "../../images/gif/catchToy.gif";
+// import couchPlace from "../../images/gif/couchPlace.gif";
+// import crawl from "../../images/gif/crawl.gif";
+// import crossPaws from "../../images/gif/crossPaws.gif";
+// import down from "../../images/gif/down.gif";
+// import drinkWater from "../../images/gif/drinkWater.gif";
+// import getSlippers from "../../images/gif/getSlippers.gif";
+// import holdIt from "../../images/gif/holdIt.gif";
+// import leaveIt from "../../images/gif/leaveIt.gif";
+// import lookOutTheWindow from "../../images/gif/lookOutTheWindow.gif";
+// import pullSocks from "../../images/gif/pullSocks.gif";
+// import scoot from "../../images/gif/scoot.gif";
+// import sitPretty from "../../images/gif/sitPretty.gif";
+// import stand from "../../images/gif/stand.gif";
+// import touch from "../../images/gif/touch.gif";
+// import tuck from "../../images/gif/tuck.gif";
+// import upOff from "../../images/gif/upOff.gif";
+// import wave from "../../images/gif/wave.gif";
 
 // const categories = {
 // 	1: "Basic",
@@ -28,7 +31,7 @@ import wave from "../../images/gif/wave.gif";
 export const tricksData = [
   {
     title: "Couch and Place",
-    photo: couchPlace,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie goes to either couch or place.",
@@ -38,10 +41,9 @@ export const tricksData = [
   },
   {
     title: "Snow Day sit",
-    photo: "",
+    photo: null,
     video: "",
-    instagramURL:
-      "https://www.instagram.com/reel/C4ioXcALwdh",
+    instagramURL: "https://www.instagram.com/reel/C4ioXcALwdh",
     // instagramURL:
     //   "https://www.instagram.com/reel/C4ioXcALwdh/?igsh=MXRqamhzMXI2anoxag%3D%3D",
     description: "Snow Day sit",
@@ -49,10 +51,10 @@ export const tricksData = [
     category: "Basic",
     likes: 1001,
   },
-	// https://www.instagram.com/reel/C4ioXcALwdh/?utm_source=ig_embed&ig_rid=9bea4fda-362d-4b97-9776-e3b66b532ae6
+  // https://www.instagram.com/reel/C4ioXcALwdh/?utm_source=ig_embed&ig_rid=9bea4fda-362d-4b97-9776-e3b66b532ae6
   {
     title: "Up and Off",
-    photo: upOff,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie jumps up and off.",
@@ -62,7 +64,7 @@ export const tricksData = [
   },
   {
     title: "Be Cute",
-    photo: beCute,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie rests her head on your knees.",
@@ -112,7 +114,7 @@ export const tricksData = [
   },
   {
     title: "Get Slippers",
-    photo: getSlippers,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie retrives slippers.",
@@ -133,7 +135,7 @@ export const tricksData = [
   },
   {
     title: "Sit Pretty",
-    photo: sitPretty,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie sits up on her hind legs, balancing in a cute pose.",
@@ -166,7 +168,7 @@ export const tricksData = [
   },
   {
     title: "Leave it",
-    photo: leaveIt,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie ignores items or treats on the ground when commanded.",
@@ -199,7 +201,7 @@ export const tricksData = [
   },
   {
     title: "Down",
-    photo: down,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie lies down on command.",
@@ -210,7 +212,7 @@ export const tricksData = [
   },
   {
     title: "Crawl",
-    photo: crawl,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie crawls forward with her belly on the ground.",
@@ -232,7 +234,7 @@ export const tricksData = [
   },
   {
     title: "Cross Paws",
-    photo: crossPaws,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie crosses her front paws while sitting.",
@@ -243,7 +245,7 @@ export const tricksData = [
   },
   {
     title: "Scoot",
-    photo: scoot,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie scoots backward while lying down.",
@@ -254,7 +256,7 @@ export const tricksData = [
   },
   {
     title: "Stand",
-    photo: stand,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie stands up on her hind legs briefly.",
@@ -265,7 +267,7 @@ export const tricksData = [
   },
   {
     title: "Drink Water",
-    photo: drinkWater,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie drinks water on command.",
@@ -287,7 +289,7 @@ export const tricksData = [
   },
   {
     title: "Touch",
-    photo: touch,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie touches your hand with her nose.",
@@ -364,7 +366,7 @@ export const tricksData = [
   },
   {
     title: "Wave",
-    photo: wave,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie waves her paws in a cute gesture.",
@@ -375,7 +377,7 @@ export const tricksData = [
   },
   {
     title: "Catch",
-    photo: catchToy,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie catches a treat in her mouth.",
@@ -386,7 +388,7 @@ export const tricksData = [
   },
   {
     title: "Hold It",
-    photo: holdIt,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie holds onto a toy or object for several seconds.",
@@ -408,7 +410,7 @@ export const tricksData = [
   },
   {
     title: "Tuck",
-    photo: tuck,
+    photo: null,
     video: null,
     instagramURL: "",
     description:
@@ -443,7 +445,7 @@ export const tricksData = [
   },
   {
     title: "Pull Socks",
-    photo: pullSocks,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie pulls socks off your feet.",
@@ -454,7 +456,7 @@ export const tricksData = [
   },
   {
     title: "Look Out the Window",
-    photo: lookOutTheWindow,
+    photo: null,
     video: null,
     instagramURL: "",
     description: "Rosie rests her head on the couch and looks out the window.",
