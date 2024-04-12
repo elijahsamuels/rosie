@@ -10,7 +10,7 @@ const AboutSubject = () => {
 
     sections.push(
       <section className="section" key={title}>
-        {title && <p className={"subtitle"}>{title}</p>}
+        {title && <h3 className={"subtitle"}>{title}</h3>}
         <p className={"paragraph"}>{paragraph}</p>
       </section>
     );
@@ -18,8 +18,7 @@ const AboutSubject = () => {
 
   return sections;
 };
-const ws = new WebSocket('ws://localhost:8080');
-console.log('ws:', ws);
+
 const About = () => {
   return (
     <div className="container">
