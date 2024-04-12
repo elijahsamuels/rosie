@@ -286,5 +286,14 @@
     "howTo": "Kneel down in front of Rosie and pat your chest, encouraging her to put her paws around your neck. Reward her for completing the action.",
     "category": 1,
     "likes": 0
+  },
+  {
+    "title": "Open Fridge",
+    "photo": "./path/filename",
+    "video": "https://www.instagram.com/reel/Cby4mPuM8j2/",
+    "description": "Rosie puts her paws around your neck for a hug.",
+    "howTo": "Kneel down in front of Rosie and pat your chest, encouraging her to put her paws around your neck. Reward her for completing the action.",
+    "category": 1,
+    "likes": 0
   }
 ]

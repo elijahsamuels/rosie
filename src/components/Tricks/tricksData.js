@@ -116,7 +116,7 @@ export const tricksData = [
     title: "Get Slippers",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/reel/Ca3qAr1vekn/",
     description: "Rosie retrives slippers.",
     howTo: "Coming soon...",
     category: "Basic",
@@ -137,7 +137,7 @@ export const tricksData = [
     title: "Sit Pretty",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/reel/Casosp2NLdm/",
     description: "Rosie sits up on her hind legs, balancing in a cute pose.",
     howTo:
       "With Rosie in a sitting position, hold a treat above her head, encouraging her to lift her front paws off the ground while balancing.",
@@ -236,7 +236,7 @@ export const tricksData = [
     title: "Cross Paws",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/reel/Ca3peG2LDt1/",
     description: "Rosie crosses her front paws while sitting.",
     howTo:
       "With Rosie sitting, gently lift one of her front paws and guide it over the other, crossing them. Reward her for holding this position.",
@@ -247,7 +247,7 @@ export const tricksData = [
     title: "Scoot",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/reel/CbFv0snj0RX/",
     description: "Rosie scoots backward while lying down.",
     howTo:
       "Encourage Rosie to lie down, then gently guide her hindquarters backward while rewarding her for movement.",
@@ -473,6 +473,17 @@ export const tricksData = [
     description: "Rosie puts her paws around your neck for a hug.",
     howTo:
       "Kneel down in front of Rosie and pat your chest, encouraging her to put her paws around your neck. Reward her for completing the action.",
+    category: "Basic",
+    likes: 0,
+  },
+  {
+    title: "Open Fridge",
+    photo: null,
+    video: null,
+    instagramURL: "https://www.instagram.com/reel/Cby4mPuM8j2/",
+    description: "Rosie opens the refrigerator.",
+    howTo:
+      "",
     category: "Basic",
     likes: 0,
   },
