@@ -25,7 +25,7 @@
 // 	1: "Basic",
 // 	2: "Circus",
 // 	3: "Adorable",
-// 	4: "Circus",
+// 	4: "Advanced",
 // }
 
 export const tricksData = [
@@ -44,19 +44,16 @@ export const tricksData = [
     photo: null,
     video: "",
     instagramURL: "https://www.instagram.com/reel/C4ioXcALwdh",
-    // instagramURL:
-    //   "https://www.instagram.com/reel/C4ioXcALwdh/?igsh=MXRqamhzMXI2anoxag%3D%3D",
     description: "Snow Day sit",
     howTo: "just watch",
     category: "Basic",
     likes: 1001,
   },
-  // https://www.instagram.com/reel/C4ioXcALwdh/?utm_source=ig_embed&ig_rid=9bea4fda-362d-4b97-9776-e3b66b532ae6
   {
     title: "Up and Off",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5pi8eKNPxY/",
     description: "Rosie jumps up and off.",
     howTo: "Coming soon...",
     category: "Basic",
@@ -66,7 +63,7 @@ export const tricksData = [
     title: "Be Cute",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5pg4bsAYuS/",
     description: "Rosie rests her head on your knees.",
     howTo: "Coming soon...",
     category: "Adorable",
@@ -170,7 +167,7 @@ export const tricksData = [
     title: "Leave it",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5phxhYOS7Y/",
     description: "Rosie ignores items or treats on the ground when commanded.",
     howTo:
       "Place a treat on the ground and cover it with your hand. When Rosie shows no interest, reward her with a different treat.",
@@ -203,7 +200,7 @@ export const tricksData = [
     title: "Down",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5phS_fOS-j/",
     description: "Rosie lies down on command.",
     howTo:
       "With Rosie in a sitting position, hold a treat near her nose and slowly lower it to the ground, prompting her to lie down.",
@@ -214,7 +211,7 @@ export const tricksData = [
     title: "Crawl",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5phKD3vyE9/",
     description: "Rosie crawls forward with her belly on the ground.",
     howTo:
       "Hold a treat near Rosie's nose and slowly move it forward, encouraging her to crawl while keeping her belly on the ground.",
@@ -258,7 +255,7 @@ export const tricksData = [
     title: "Stand",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5pit7dM2WV/",
     description: "Rosie stands up on her hind legs briefly.",
     howTo:
       "Hold a treat above Rosie's head, encouraging her to stand on her hind legs to reach it. Reward her for the action.",
@@ -269,7 +266,7 @@ export const tricksData = [
     title: "Drink Water",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5phX1EM94r/",
     description: "Rosie drinks water on command.",
     howTo:
       "Point to the water bowl and say 'drink water' while encouraging Rosie to approach and drink.",
@@ -291,7 +288,7 @@ export const tricksData = [
     title: "Touch",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5piy46N95v/",
     description: "Rosie touches your hand with her nose.",
     howTo:
       "Hold out your hand, and when Rosie touches it with her nose, reward her immediately. Repeat this action to reinforce the behavior.",
@@ -379,7 +376,7 @@ export const tricksData = [
     title: "Catch",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5phGCwOUks/?img_index=1",
     description: "Rosie catches a treat in her mouth.",
     howTo:
       "Throw a treat toward Rosie, saying 'catch,' and reward her if she catches it in her mouth.",
@@ -390,7 +387,7 @@ export const tricksData = [
     title: "Hold It",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5phuBrs6Je/",
     description: "Rosie holds onto a toy or object for several seconds.",
     howTo:
       "Give Rosie a toy or object and say 'hold it,' then reward her for maintaining her grip until you say 'okay.'",
@@ -412,7 +409,7 @@ export const tricksData = [
     title: "Tuck",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5pi45KrCrt/",
     description:
       "Rosie crawls under your legs and stays there for a few seconds.",
     howTo:
@@ -447,7 +444,7 @@ export const tricksData = [
     title: "Pull Socks",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5ph8PcrsRE/",
     description: "Rosie pulls socks off your feet.",
     howTo:
       "Put socks on loosely and encourage Rosie to pull them off your feet. Reward her for completing the action.",
@@ -458,7 +455,7 @@ export const tricksData = [
     title: "Look Out the Window",
     photo: null,
     video: null,
-    instagramURL: "",
+    instagramURL: "https://www.instagram.com/p/C5ph1ZvvMN-/",
     description: "Rosie rests her head on the couch and looks out the window.",
     howTo:
       "Encourage Rosie to lay on the couch and look out the window. Reward her for staying in that position.",
