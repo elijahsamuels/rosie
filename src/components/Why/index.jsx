@@ -52,54 +52,6 @@ const Why = () => {
 		// return `${year} / ${month} / ${day} @ ${hours}:${minutes}`
 	}
 
-	// const iconMap = [
-  //   {
-  //     name: "e2e",
-  //     shortName: "e2e",
-  //     class: "e2e",
-  //   },
-  //   {
-  //     name: "integration",
-  //     shortName: "intgrate",
-  //     class: "integration",
-  //   },
-  //   {
-  //     name: "secret_detection",
-  //     shortName: "secret detect",
-  //     class: "secret-detection",
-  //   },
-  //   {
-  //     name: "unit_test",
-  //     shortName: "unit test",
-  //     class: "unit-test",
-  //   },
-  //   {
-  //     name: "accessibility",
-  //     shortName: "accessibility",
-  //     class: "accessibility",
-  //   },
-  //   {
-  //     name: "lighthouse",
-  //     shortName: "lighthouse",
-  //     class: "lighthouse",
-  //   },
-  //   {
-  //     name: "k6",
-  //     shortName: "k6",
-  //     class: "k6",
-  //   },
-  //   {
-  //     name: "k6-loadtest-cloud",
-  //     shortName: "k6 cloud",
-  //     class: "k6-loadtest-cloud",
-  //   },
-  //   {
-  //     name: "k6-loadtest-local",
-  //     shortName: "k6 local",
-  //     class: "k6-loadtest-local",
-  //   },
-  // ];
-
 	const iconGenerator = (name, index) => {
 		// console.log('index:', index);
 		return <span key={index} className={`${iconMap[name].class} icon`}>{iconMap[name].shortName} </span>;
@@ -126,16 +78,11 @@ const Why = () => {
             </tbody>
           </table>
         </div>
-        <div className="icon-legend">
-          <b>Icon Legend</b>
-        </div>
       </>
     );
   };
 
   const JobDataRow = () => {
-
-		// console.log('pipelineData:', pipelineData);
     return pipelineData.map((node, index) => {
       return (
         <React.Fragment key={index}>
@@ -143,10 +90,6 @@ const Why = () => {
             <td className="index">{index + 1}</td>
             <td className="status">{node.status}</td>
             <td className="stage">{node.stages.nodes[0]?.name || null}</td>
-						{/* take the subNode.name and make it an icon 
-							an
-						
-						*/}
             <td className="job-from-stage">{node.stages.nodes.map(node => node.jobs.nodes.map((subNode, index) => iconGenerator(subNode.name, index) )) || null}</td>
             {/* <td className="stage">{node.stages.nodes[0]?.stages || null}</td>.map(job => job.name */}
             <td className="failureReason">{node.failureReason || "N/A"}</td>
@@ -167,6 +110,36 @@ const Why = () => {
     });
   };
 
+
+const Legend = () => {
+  return (
+    <div className="icon-legend">
+      <b>Icon Legend</b>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Short Name</th>
+            <th>Long Name</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {Object.entries(iconMap).map((item) => {
+            return (
+              <tr>
+                <td className="short-name">{item[1].shortName}</td>
+                <td className="long-name">{item[1].longName}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+
   return (
     <div className="container">
       <div className="title">Why Rosie</div>
@@ -174,6 +147,7 @@ const Why = () => {
         <WhyParagraphs />
       </div>
       {(isLoading && <Loading />) || <JobDataTable />}
+			<Legend />
     </div>
   );
 };
