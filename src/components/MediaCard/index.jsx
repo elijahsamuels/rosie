@@ -16,7 +16,7 @@ const MediaCard = ({ data }) => {
   } = data;
 
   return (
-    <div>
+    <div className='media-card'>
       {title && <div>{title}</div>}
       {imageSource && <img src={imageSource} alt={title} style={styles.photoCard} />}
       {photo && <img src={photo} alt={title} className="photo" />}

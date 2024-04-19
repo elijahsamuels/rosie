@@ -7,8 +7,8 @@ const Media = () => {
   return (
     <div style={styles.container}>
       <div className='page-title'>Media</div>
-			{mediaData.map((media) => {
-				return <MediaCard key={media.title} data={media}/>
+			{mediaData.map((media, index) => {
+				return <MediaCard key={index} data={media}/>
 			})}
     </div>
   );
