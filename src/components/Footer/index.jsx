@@ -12,7 +12,6 @@ const { instagram } = links;
 
 const Footer = () => {
   return (
-    // <footer className='footer1'> 
     <footer className='footer2'> 
       <div className="social-links">
         <a href={instagram}><FaInstagram /></a>
