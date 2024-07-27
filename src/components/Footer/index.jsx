@@ -2,7 +2,7 @@ import { FaInstagram } from 'react-icons/fa';
 import { AiOutlineMail } from 'react-icons/ai';
 import { links } from './constants'
 import './styles.css';
-
+// testing 2
 const copyrightAndCurrentYear = () => {
   const date = new Date();
   return `© ${date.getFullYear()}`;
