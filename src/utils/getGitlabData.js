@@ -1,9 +1,4 @@
 import axios from "axios";
-// const {
-//   REACT_APP_GITLAB_API_TOKEN: ACCESS_TOKEN,
-//   REACT_APP_GITLAB_PROJECT_ID: PROJECT_ID,
-//   REACT_APP_GITLAB_BASE_URL: BASE_URL,
-// } = process.env;
 
 const config = {
   method: "get",
