@@ -1,7 +1,7 @@
 // Docs on request and context https://docs.netlify.com/functions/build/#code-your-function-2
 
 import axios from "axios";
-const { GITLAB_API_TOKEN: ACCESS_TOKEN } = process.env;
+// const { GITLAB_API_TOKEN: ACCESS_TOKEN } = process.env;
 
 // https://gitlab.com/-/graphql-explorer
 const pipelinesQuery = `
@@ -55,7 +55,7 @@ export const handler = async () => {
     url: "https://gitlab.com/api/graphql",
     headers: {
       "Content-Type": "application/json",
-      "Private-Token": ACCESS_TOKEN,
+      // "Private-Token": ACCESS_TOKEN,
     },
     data,
   };
