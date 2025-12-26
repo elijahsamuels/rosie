@@ -30,7 +30,6 @@ export const getGitlabPipelineDataGraphQL = async () => {
 //   });
 
 //   if (process.env.NODE_ENV === "local") {
-//     const { REACT_APP_GITLAB_API_TOKEN1: ACCESS_TOKEN } = process.env;
 //     let config = {
 //       method: "post",
 //       maxBodyLength: Infinity,
