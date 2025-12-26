@@ -22,7 +22,9 @@ const Why = () => {
     // };
     const getPipelineData = async () => {
       let data = await getGitlabPipelineDataGraphQL();
-      setPipelineData(data.project.pipelines.nodes);
+			if (data.project?.pipelines?.nodes){
+				setPipelineData(data.project?.pipelines?.nodes);
+			}
       setIsLoading(false); 
     };
 

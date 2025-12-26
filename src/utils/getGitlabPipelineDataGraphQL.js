@@ -1,61 +1,62 @@
 import axios from "axios";
-import { pipelinesQuery } from './graphQLQueries'
-const {
-  REACT_APP_GITLAB_API_TOKEN: ACCESS_TOKEN,
-} = process.env;
+import { pipelinesQuery } from "./graphQLQueries";
 
-// https://docs.gitlab.com/ee/api/graphql/reference/#pipeline
 export const getGitlabPipelineDataGraphQL = async () => {
-  let data = JSON.stringify({
-		query: pipelinesQuery,
+  const data = JSON.stringify({
+    query: pipelinesQuery,
     variables: {},
   });
 
-  let config = {
-    method: "post",
-    maxBodyLength: Infinity,
-    url: "https://gitlab.com/api/graphql",
-    headers: {
-      "Content-Type": "application/json",
-      "Private-Token": ACCESS_TOKEN,
-    },
-    data,
-  };
-
-  let axiosResponse = axios
-    .request(config)
-    .then((response) => {
-			const { data } = response.data;
-      // console.log('Pipeline.nodes', response.data.data.project.pipelines.nodes);
-      // console.log(JSON.stringify(response.data));
-			return data
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-		return axiosResponse
+  try {
+    // This URL works in PROD and LOCALLY (via Netlify Dev)
+    const response = await axios.post("/.netlify/functions/gitlab-proxy", data);
+		console.log('response.data', response.data.data);
+    return response.data.data; 
+  } catch (error) {
+    console.error("Error fetching GitLab data:", error);
+    throw error;
+  }
 };
 
-// const fetchRepositoryData = async (config) => {
-//   try {
-//     const response = await axios.request(config);
-//     const { data } = response;
+// import axios from "axios";
+// import { pipelinesQuery } from "./graphQLQueries";
+// import { handler } from "../../netlify/functions/gitlab-proxy.js";
+
+// // https://docs.gitlab.com/ee/api/graphql/reference/#pipeline
+// export const getGitlabPipelineDataGraphQL = async () => {
+//   let data = JSON.stringify({
+//     query: pipelinesQuery,
+//     variables: {},
+//   });
+
+//   if (process.env.NODE_ENV === "local") {
+//     const { REACT_APP_GITLAB_API_TOKEN: ACCESS_TOKEN } = process.env;
+//     let config = {
+//       method: "post",
+//       maxBodyLength: Infinity,
+//       url: "https://gitlab.com/api/graphql",
+//       headers: {
+//         "Content-Type": "application/json",
+//         "Private-Token": ACCESS_TOKEN,
+//       },
+//       data,
+//     };
+
+//     let axiosResponse = axios
+//       .request(config)
+//       .then((response) => {
+//         const { data } = response.data;
+//         return data;
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//     return axiosResponse;
+//   } else {
+//     // /.netlify/functions/gitlab-proxy
+
+//     const data = await handler.then((response) => response.data).catch((error) => error);
+
 //     return data;
-//   } catch (error) {
-//     console.log(error);
 //   }
-// };
-
-// export const fetchPipelineData = async () => {
-//   config.url = `${BASE_URL}${PROJECT_ID}/pipelines?per_page=11`;
-//   const data = await fetchRepositoryData(config);
-
-//   return data;
-// };
-
-// export const fetchJobData = async () => {
-//   config.url = `${BASE_URL}${PROJECT_ID}/jobs?per_page=10`;
-//   const data = await fetchRepositoryData(config);
-
-//   return data;
 // };
