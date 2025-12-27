@@ -6,8 +6,20 @@
 
 .welcomePhoto {
   width: 400px;
-  filter: drop-shadow(15px 15px 15px rgb(0 0 0 / 0.7));
-  /* height: 50px; */
+  filter: drop-shadow(15px 15px 15px rgba(0, 0, 0, 0.246));
+	width: 100%;
+  max-width: 600px;
+  
+  /* -webkit-mask-image: radial-gradient(
+    circle, 
+    black 100%,
+    transparent 100% 
+  );
+  mask-image: radial-gradient(
+    circle, 
+    black 100%, 
+    transparent 100%
+  ); */
 }
 
 .overlay {

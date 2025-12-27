@@ -98,29 +98,26 @@ const Why = () => {
     });
   };
 
-  const Legend = () => {
+	const Legend = () => {
     return (
       <div className="icon-legend">
         <b>Icon Legend</b>
-
         <table>
           <thead>
             <tr>
-              <th>Short Name</th>
+              <th>Icon</th>
               <th>Long Name</th>
               <th>Description</th>
             </tr>
           </thead>
 
           <tbody>
-            {Object.entries(iconMap).map((item, index) => {
-              const parentProperties = Object.keys(iconMap);
-
+            {Object.entries(iconMap).map(([key, value], index) => {
               return (
                 <tr key={index}>
-                  {iconGenerator(parentProperties[index], index) || null}
-                  <td className="long-name">{item[1].longName}</td>
-                  <td className="description">{item[1].description}</td>
+                  <td className="icon-cell">{iconGenerator(key, index)}</td>
+                  <td className="long-name">{value.longName}</td>
+                  <td className="description">{value.description}</td>
                 </tr>
               );
             })}

@@ -1,25 +1,32 @@
 import React from "react";
-import { UAParser } from 'ua-parser-js';
-// import Rosie from "../../images/Rosie2.png";
+import { UAParser } from "ua-parser-js";
+import Rosie from "../../images/Subject.png";
+// import Rosie from "../../images/Cover.jpeg";
 import "./styles.css";
 const parser = new UAParser();
 
 let userAgent = parser.getResult();
 
 const mobile = () => {
-const {browser, device, os, ua} = userAgent
-	if (device.model === 'iPhone' || device.type === 'mobile' || os.name === 'iOS' || ua.includes('iPhone') || browser.name.includes('mobile')) {
-		return true
-	}
-	return false
-}
+  const { browser, device, os, ua } = userAgent;
+  if (
+    device.model === "iPhone" ||
+    device.type === "mobile" ||
+    os.name === "iOS" ||
+    ua.includes("iPhone") ||
+    browser.name.includes("mobile")
+  ) {
+    return true;
+  }
+  return false;
+};
 
-let rosieTitle
+let rosieTitle;
 
 if (mobile()) {
-	rosieTitle = "ROSIE";
+  rosieTitle = "ROSIE";
 } else {
-	rosieTitle = "ROSIE THE BAT DOG";
+  rosieTitle = "ROSIE THE BAT DOG";
 }
 
 const Title = () => {
@@ -27,7 +34,7 @@ const Title = () => {
   for (let i = 0; i < rosieTitle.length; i++) {
     newTitle.push(
       <div key={i} className="wrapper">
-        <div  id={rosieTitle[i]} className="letter">
+        <div id={rosieTitle[i]} className="letter">
           {rosieTitle[i]}
         </div>
         <div className="shadow">{rosieTitle[i]}</div>
@@ -48,12 +55,7 @@ const Welcome = () => {
       <div className="title">
         <Title />
       </div>
-      {/* <img src={Rosie} alt="Rosie" className="welcomePhoto" />
       <img src={Rosie} alt="Rosie" className="welcomePhoto" />
-      <img src={Rosie} alt="Rosie" className="welcomePhoto" />
-      <img src={Rosie} alt="Rosie" className="welcomePhoto" />
-      <img src={Rosie} alt="Rosie" className="welcomePhoto" />
-      <img src={Rosie} alt="Rosie" className="welcomePhoto" /> */}
     </div>
   );
 };
