@@ -20,7 +20,9 @@ const TrickCard = ({ data }) => {
       {photo && <img src={photo} alt={title} className="photo" />}
       {video && <img src={video} alt={title} className="video" />}
       {instagramURL && (
-        <InstagramEmbed url={instagramURL} className="instagram" width="100%" />
+        <div className="instagram-wrapper">
+          <InstagramEmbed url={instagramURL} className="instagram" width="100%" />
+        </div>
       )}
 
       {description && (
