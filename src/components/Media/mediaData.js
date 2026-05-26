@@ -1,26 +1,11 @@
-
 export const mediaData = [
-	// {
-	// 	title: "title",
-	// 	photo: rosieGif,
-	// 	video: null,
-	// 	instagramURL: "https://www.instagram.com/rosie_thebatdog/reel/C2DJ1sgruuH/",
-	// 	description: "Rosie goes to either couch or place.",
-	// },
-  {
-    title: "",
-    photo: null,
-    video: null,
-    instagramURL: "",
-    description: "",
-  },
-  {
-    title: "",
-    photo: null,
-    video: null,
-    instagramURL: "",
-    description: "",
-  },
+  // {
+  // 	title: "title",
+  // 	photo: rosieGif,
+  // 	video: null,
+  // 	instagramURL: "https://www.instagram.com/rosie_thebatdog/reel/C2DJ1sgruuH/",
+  // 	description: "Rosie goes to either couch or place.",
+  // },
   {
     title: "Puzzle - Level 4",
     photo: null,
@@ -35,7 +20,7 @@ export const mediaData = [
     instagramURL: "https://www.instagram.com/reel/C4ioXcALwdh/",
     description: "Snow day",
   },
-  
+
   {
     title: "Pull Socks",
     photo: null,
@@ -67,10 +52,4 @@ export const mediaData = [
     instagramURL: "https://www.instagram.com/reel/Cb5fdWPJEGv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     description: "Saxophone.",
   },
-
-
-
-
-
-
 ];

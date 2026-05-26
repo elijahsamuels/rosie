@@ -1,7 +1,5 @@
 import React from "react";
 import { InstagramEmbed } from "react-social-media-embed";
-import styles from "./styles";
-// import "./styles.css";
 
 const MediaCard = ({ data }) => {
   const {
@@ -11,20 +9,32 @@ const MediaCard = ({ data }) => {
     video = "",
     instagramURL = "",
     description = "",
-    // howTo = "",
-    // category = "Basic",
   } = data;
 
   return (
-    <div className='media-card'>
-      {title && <div>{title}</div>}
-      {imageSource && <img src={imageSource} alt={title} style={styles.photoCard} />}
-      {photo && <img src={photo} alt={title} className="photo" />}
-      {video && <img src={video} alt={title} className="video" />}
-      {instagramURL && <InstagramEmbed url={instagramURL} className="instagram" width={"100%"} />}
+    <div className="media-card">
+      {title && <div className="media-card-title">{title}</div>}
+      
+      {imageSource && (
+        <img src={imageSource} alt={title} className="media-card-photo" />
+      )}
+      {photo && (
+        <img src={photo} alt={title} className="media-card-photo" />
+      )}
+      {video && (
+        <img src={video} alt={title} className="media-card-video" />
+      )}
+      {instagramURL && (
+        <InstagramEmbed 
+          url={instagramURL} 
+          className="media-card-instagram" 
+          width="100%" 
+        />
+      )}
+      
       {description && (
-        <div className="description">
-          <span>Description:</span>
+        <div className="media-card-description">
+          <strong>Description</strong>
           {description}
         </div>
       )}

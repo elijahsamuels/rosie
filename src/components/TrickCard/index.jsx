@@ -20,24 +20,26 @@ const TrickCard = ({ data }) => {
       {photo && <img src={photo} alt={title} className="photo" />}
       {video && <img src={video} alt={title} className="video" />}
       {instagramURL && (
-        <InstagramEmbed url={instagramURL} className="instagram" width={"100%"} />
+        <InstagramEmbed url={instagramURL} className="instagram" width="100%" />
       )}
 
       {description && (
         <div className="description">
-          <span>Description:</span>
+          <strong>Description</strong>
           {description}
         </div>
       )}
 
       {howTo && (
         <div className="how-to">
-          <strong>How to: </strong>
+          <strong>Instructions</strong>
           {howTo}
         </div>
       )}
 
-      {category && <div className="category">Category: {category}</div>}
+      <div className="card-footer">
+        <span className="category-chip">{category}</span>
+      </div>
     </div>
   );
 };

@@ -1,15 +1,21 @@
 import React from "react";
-import styles from "./styles";
-import MediaCard from '../MediaCard'
+import MediaCard from '../MediaCard';
 import { mediaData } from "./mediaData.js";
+import "./styles.css";
 
 const Media = () => {
   return (
-    <div style={styles.container}>
-      <div className='page-title'>Media</div>
-			{mediaData.map((media, index) => {
-				return <MediaCard key={index} data={media}/>
-			})}
+    <div className="container">
+      <header className="page-header">
+        <div className="page-subtitle">GALLERY</div>
+        <h1 className="page-title">Media Gallery</h1>
+      </header>
+
+      <div className="media-grid">
+        {mediaData.map((media, index) => (
+          <MediaCard key={index} data={media} />
+        ))}
+      </div>
     </div>
   );
 };

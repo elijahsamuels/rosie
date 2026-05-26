@@ -1,79 +1,75 @@
-@import "../../theme.css";
-
 .card {
-	border: 1px solid black;
-	border-radius: 5px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 5px;
-	padding: 5px;
-	box-shadow: 2.5px 2.5px 15px;
-	max-width: 400px;
-	min-width: 400px;
-	transition-duration: 500ms;
-	transition-timing-function: ease-in-out;
+  background: var(--bg-container);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-xxl);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: var(--transition-smooth);
 }
 
 .card:hover {
-	box-shadow: 5px 5px 15px var(--purple-dark);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
 }
 
 .card-title {
-	font-size: 40px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-separator);
+  padding-bottom: 10px;
+  letter-spacing: -0.02em;
 }
 
-.likes {
-	text-align: right;
-}
-
-.paw-print {
-	width: 25px;
-	cursor: pointer;
-}
-
-.photo {
-	width: 150px;
-	max-width: 150px;
-	border: 1px solid black;
-	border-radius: 5px;
-	margin: 5px;
+.photo, .video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-xl);
+  margin-top: 4px;
 }
 
 .instagram {
-	width: 400px;
-	max-width: 400px;
-	border: 1px solid black;
-	border-radius: 5px;
-	margin: 5px;
-}
-.instagram > div > Header {
-	display: none;
+  width: 100% !important;
+  max-width: 100% !important;
+  border-radius: var(--radius-xl);
 }
 
-.video {
-	width: 150px;
-	border: 1px solid black;
-	border-radius: 5px;
-	margin: 5px;
+.description, .how-to {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-muted);
 }
 
-.description {
-	margin: 5px;
-	display: flex;
-	flex-direction: row;
-	text-align: left;
-}
-.description span{
-	font-weight: 700;
-}
-
-.how-to {
-	margin: 5px;
-	text-align: left;
+.description strong, .how-to strong {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 6px;
 }
 
-.category {
-	margin: 5px;
-	text-align: left;
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-separator);
+}
+
+.category-chip {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: #E8F0FE;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
 }

@@ -21,120 +21,131 @@ const Why = () => {
     getPipelineData();
   }, []);
 
-  const WhyParagraphs = () => {
-    return paragraphs.map((paragraph, index) => {
-      return (
-        <p className="" key={index}>
-          {paragraph}
-        </p>
-      );
-    });
-  };
-
   const parseDate = (dateString) => {
+    if (!dateString) return "N/A";
     return dateString.replace("T", " ").replace("Z", " ");
   };
 
-  const iconGenerator = (name, index = 0) => {
+  const pillGenerator = (name, index = 0) => {
+    const config = iconMap[name];
+    const shortText = config ? config.shortName : name.substring(0, 4);
+    const classNameVal = config ? config.class : name;
+    
     return (
-      <span key={index} className={`${iconMap[name].class} icon`}>
-        {iconMap[name].shortName}{" "}
+      <span key={index} className={`job-pill ${classNameVal}`}>
+        {shortText}
       </span>
     );
   };
 
-  const JobDataTable = () => {
-    return (
-      <>
-        <div className="job-data-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Index</th>
-                <th>Status</th>
-                <th>Stage</th>
-                <th>Jobs from Stage</th>
-                <th>Failure Reason</th>
-                <th>Job Run Date/Time</th>
-                <th>Artifact Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              <JobDataRow />
-            </tbody>
-          </table>
-        </div>
-      </>
-    );
-  };
-
-  const JobDataRow = () => {
-    return pipelineData.map((node, index) => {
-      return (
-        <React.Fragment key={index}>
-          <tr>
-            <td className="index">{index + 1}</td>
-            <td className="status">{node.status}</td>
-            <td className="stage">{node.stages.nodes[0]?.name || null}</td>
-            {/* <td className="job-from-stage">{node.stages.nodes.map(node => node.jobs.nodes.map((subNode, index) => subNode.name )) || null}</td> */}
-            <td className="job-from-stage">
-              {node.stages.nodes.map((node) =>
-                node.jobs.nodes.map((subNode, index) => iconGenerator(subNode.name, index))
-              ) || null}
-            </td>
-            {/* <td className="stage">{node.stages.nodes[0]?.stages || null}</td>.map(job => job.name */}
-            <td className="failureReason">{node.failureReason || "N/A"}</td>
-            <td className="datetime">{parseDate(node.createdAt) || "N/A"}</td>
-            <td className="link">
-              <a href={`https://gitlab.com${node.jobArtifacts[0]?.downloadPath}`}>
-                {node.jobArtifacts[0]
-                  ? `${node.jobArtifacts[0].name} @ ${parseInt(node.jobArtifacts[0].size / 1000)}kb`
-                  : ""}
-              </a>
-            </td>
-          </tr>
-        </React.Fragment>
-      );
-    });
-  };
-
-	const Legend = () => {
-    return (
-      <div className="icon-legend">
-        <b>Icon Legend</b>
-        <table>
-          <thead>
-            <tr>
-              <th>Icon</th>
-              <th>Long Name</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {Object.entries(iconMap).map(([key, value], index) => {
-              return (
-                <tr key={index}>
-                  <td className="icon-cell">{iconGenerator(key, index)}</td>
-                  <td className="long-name">{value.longName}</td>
-                  <td className="description">{value.description}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-    );
+  const renderStatusBadge = (status) => {
+    const norm = (status || "").toUpperCase();
+    if (norm === "SUCCESS") {
+      return <span className="badge-status status-success">● SUCCESS</span>;
+    } else if (norm === "FAILED" || norm === "FAILED_STRICT") {
+      return <span className="badge-status status-failed">▲ FAILED</span>;
+    } else {
+      return <span className="badge-status status-running">■ {norm || "PENDING"}</span>;
+    }
   };
 
   return (
     <div className="container">
-      <div className="title">Why Rosie</div>
-      <div className="paragraph">
-        <WhyParagraphs />
+      <header className="page-header">
+        <div className="page-subtitle">QA & OPERATIONS</div>
+        <h1 className="page-title">Operations & QA</h1>
+      </header>
+
+      <div className="why-wrapper">
+        {/* Paragraphs Card */}
+        <div className="glass-card why-paragraphs-card">
+          {paragraphs.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
+
+        {/* Pipeline DataTable Card */}
+        <div className="glass-card dashboard-table-card">
+          {isLoading ? (
+            <Loading />
+          ) : (
+            <table className="gitops-table">
+              <thead>
+                <tr>
+                  <th>Index</th>
+                  <th>Status</th>
+                  <th>Stage</th>
+                  <th>Jobs Output</th>
+                  <th>Failure Reason</th>
+                  <th>Run Date/Time</th>
+                  <th>Artifact Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pipelineData.map((node, index) => (
+                  <tr key={index}>
+                    <td>{(index + 1).toString().padStart(2, "0")}</td>
+                    <td>{renderStatusBadge(node.status)}</td>
+                    <td>
+                      <span className="stage-tag">
+                        {node.stages.nodes[0]?.name || "build"}
+                      </span>
+                    </td>
+                    <td>
+                      <div className="job-pill-container">
+                        {node.stages.nodes.map((stageNode) =>
+                          stageNode.jobs.nodes.map((subNode, subIdx) =>
+                            pillGenerator(subNode.name, subIdx)
+                          )
+                        )}
+                      </div>
+                    </td>
+                    <td style={{ color: node.failureReason ? 'var(--error)' : 'inherit' }}>
+                      {node.failureReason || "N/A"}
+                    </td>
+                    <td>{parseDate(node.createdAt)}</td>
+                    <td>
+                      {node.jobArtifacts && node.jobArtifacts[0] ? (
+                        <a 
+                          href={`https://gitlab.com${node.jobArtifacts[0].downloadPath}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {node.jobArtifacts[0].name} ({parseInt(node.jobArtifacts[0].size / 1000)}kb)
+                        </a>
+                      ) : (
+                        "-"
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+
+        {/* Legend Card */}
+        <div className="glass-card legend-card">
+          <div className="legend-title">Job Key & Definitions</div>
+          <table className="legend-table">
+            <tbody>
+              {Object.entries(iconMap).map(([key, value], index) => (
+                <tr key={index}>
+                  <td className="pill-cell">
+                    {pillGenerator(key, index)}
+                  </td>
+                  <td className="name-cell">
+                    {value.longName}
+                  </td>
+                  <td className="desc-cell">
+                    {value.description}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-      {(isLoading && <Loading />) || <JobDataTable />}
-      <Legend />
     </div>
   );
 };

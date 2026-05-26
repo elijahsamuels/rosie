@@ -1,15 +1,112 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-	/* height: 100%; */
+@import "./theme.css";
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  letter-spacing: -0.01em;
+}
+
+code, pre {
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+/* Translucent macOS-Style Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Typography Elements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+a:hover {
+  color: var(--primary-container);
+  opacity: 0.85;
+}
+
+/* Global layouts */
+.container {
+  max-width: var(--container-max, 1200px);
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  min-height: calc(100vh - 140px);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 8px 40px;
+  }
+}
+
+/* Page titles */
+.page-header {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.page-title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.page-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Premium Card Component Utility (Apple Style: white card, soft shadow, no border) */
+.glass-card {
+  background: var(--bg-container);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-xxl);
+  padding: 28px;
+  border: none;
+  transition: var(--transition-smooth);
+}
+
+.glass-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
 }

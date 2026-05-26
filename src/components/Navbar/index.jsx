@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import pawPrint from "../../images/paw_print_large2.svg";
 import "./styles.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <nav className={`navbar ${isOpen ? "open" : ""}`}>
+    <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          <img src={pawPrint} alt="paw print icon" className="navbar-logo" />
+        <Link to="/" className="navbar-logo" onClick={() => setIsOpen(false)}>
+          Rosie
         </Link>
+        
         <div className="menu-icon" onClick={toggleMenu}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </div>
@@ -28,7 +29,7 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <Link to="/about" className="nav-link" onClick={toggleMenu}>
-              About Rosie
+              About
             </Link>
           </li>
           <li className="nav-item">
@@ -48,7 +49,7 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <Link to="/why" className="nav-link" onClick={toggleMenu}>
-              Why?
+              Ops
             </Link>
           </li>
         </ul>

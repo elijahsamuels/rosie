@@ -1,68 +1,61 @@
-@import "../../theme.css";
-
-/* this is close, but not 100% */
-
-.footer1 {
-	z-index: 2;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  /* background-color: var(--background-light); */
-  color: var(--font-dark);
-  text-align: center;
-  padding: 10px 0;
-}
-
 .footer2 {
-	z-index: 2;
-  /* position: fixed; */
-  /* left: 0; */
-  /* bottom: 0; */
-  width: 200px;
-	/* border-radius: 50px 50px 0px 0px; */
-	/* background: rgb(255,255,255);
-	background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); */
-  background-color: white;
-  color: var(--font-dark);
-	text-align: center;
-  padding: 10px 0;
-}
-
-.content-above-footer {
-  margin-bottom: 80px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-separator);
+  background-color: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  z-index: 10;
 }
 
 .social-links {
-	transition: all 0.3s ease;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .social-links a {
-  color: var(--font-dark);
-  font-size: 20px;
-  margin: 0 10px;
-	transition: all 0.3s ease;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
 }
 
 .social-links a:hover {
-	color: var(--purple-dark);
+  color: var(--primary);
+  transform: translateY(-1.5px);
 }
 
 .footer-info {
-  margin-bottom: 10px;
-}
-
-.footer-info p {
-  margin: 0;
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .footer-info a {
-  color: var(--font-dark);
-  text-decoration: none;
-	transition: all 0.3s ease;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: var(--transition-smooth);
 }
 
 .footer-info a:hover {
-	color: var(--purple-dark);
+  color: var(--primary);
+}
+
+@media screen and (max-width: 600px) {
+  .footer2 {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 24px 16px;
+  }
 }

@@ -1,22 +1,26 @@
 import React, { useState, useMemo } from "react";
 import TrickCard from "../TrickCard";
 import { tricksData } from "./tricksData.js";
-import styles from "./styles.js";
+import { FiSearch } from "react-icons/fi";
 import "./styles.css";
 
-const Search = ({ searchString, handleChange }) => {
+const Search = ({ searchString, handleChange, count }) => {
   return (
-    <label>
-      Search Tricks:
-      <input
-        type="text"
-        placeholder="Search Tricks..."
-        className="search"
-        value={searchString}
-        onChange={handleChange}
-      />
-      Count: {Object.entries(tricksData).length - 1}
-    </label>
+    <div className="search-palette">
+      <div className="search-field-container">
+        <FiSearch className="search-icon" />
+        <input
+          type="text"
+          placeholder="Search tricks (e.g. roll, sleep, spin)..."
+          className="search-input"
+          value={searchString}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="search-count">
+        {count} tricks found
+      </div>
+    </div>
   );
 };
 
@@ -28,66 +32,78 @@ const Tricks = () => {
   };
 
   const filteredTricks = useMemo(() => {
+    const query = searchString.toLowerCase();
     return tricksData
       .sort((a, b) => a.title.localeCompare(b.title))
       .filter(
         (trick) =>
-          trick.description.includes(searchString) ||
-          trick.title.includes(searchString)
+          (trick.description || "").toLowerCase().includes(query) ||
+          (trick.title || "").toLowerCase().includes(query)
       );
   }, [searchString]);
 
-  const BasicTrickCards = () => {
-    const basicTricks = filteredTricks.filter(
-      (trick) => trick.category === "Basic"
-    );
+  const basicTricks = filteredTricks.filter(
+    (trick) => trick.category === "Basic"
+  );
 
-    return (
-      <>
-        <div style={styles.title}>Basic Tricks</div>
-        {basicTricks.map((trick) => {
-          return <TrickCard key={trick.title} data={trick} />;
-        })}
-      </>
-    );
-  };
+  const circusTricks = filteredTricks.filter(
+    (trick) => trick.category === "Circus"
+  );
 
-  const CircusTrickCards = () => {
-    const circusTricks = filteredTricks.filter(
-      (trick) => trick.category === "Circus"
-    );
-
-    return (
-      <>
-        <div style={styles.title}>Circus Tricks</div>
-        {circusTricks.map((trick) => {
-          return <TrickCard key={trick.title} data={trick} />;
-        })}
-      </>
-    );
-  };
-
-  const MiscTrickCards = () => {
-    const miscTricks = filteredTricks.filter(
-      (trick) => trick.category !== "Circus" && trick.category !== "Basic"
-    );
-
-    return (
-      <>
-        <div style={styles.title}>Misc Tricks</div>
-        {miscTricks.map((trick) => {
-          return <TrickCard key={trick.title} data={trick} />;
-        })}
-      </>
-    );
-  };
+  const miscTricks = filteredTricks.filter(
+    (trick) => trick.category !== "Circus" && trick.category !== "Basic"
+  );
 
   return (
-    <div style={styles.container}>
-      <Search searchString={searchString} handleChange={handleChange} />
-      <BasicTrickCards />
-      <CircusTrickCards />
-      <MiscTrickCards />
+    <div className="container">
+      <header className="page-header">
+        <div className="page-subtitle">Skills</div>
+        <h1 className="page-title">Tricks & Skills</h1>
+      </header>
+
+      <div className="tricks-wrapper">
+        <Search 
+          searchString={searchString} 
+          handleChange={handleChange} 
+          count={filteredTricks.length} 
+        />
+
+        {/* Basic Tricks Section */}
+        {basicTricks.length > 0 && (
+          <div className="tricks-section">
+            <h2 className="tricks-section-title">Basic Core Tricks</h2>
+            <div className="tricks-grid">
+              {basicTricks.map((trick) => (
+                <TrickCard key={trick.title} data={trick} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Circus Tricks Section */}
+        {circusTricks.length > 0 && (
+          <div className="tricks-section">
+            <h2 className="tricks-section-title">Circus & Advanced Tricks</h2>
+            <div className="tricks-grid">
+              {circusTricks.map((trick) => (
+                <TrickCard key={trick.title} data={trick} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Misc Tricks Section */}
+        {miscTricks.length > 0 && (
+          <div className="tricks-section">
+            <h2 className="tricks-section-title">Miscellaneous Tricks</h2>
+            <div className="tricks-grid">
+              {miscTricks.map((trick) => (
+                <TrickCard key={trick.title} data={trick} />
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

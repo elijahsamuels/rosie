@@ -1,8 +1,9 @@
+import React from "react";
 import { FaInstagram } from 'react-icons/fa';
 import { AiOutlineMail } from 'react-icons/ai';
-import { links } from './constants'
+import { links } from './constants';
 import './styles.css';
-// testing 2
+
 const copyrightAndCurrentYear = () => {
   const date = new Date();
   return `© ${date.getFullYear()}`;
@@ -14,11 +15,20 @@ const Footer = () => {
   return (
     <footer className='footer2'> 
       <div className="social-links">
-        <a href={instagram}><FaInstagram /></a>
-        <a href="mailto:elijahsamuels@gmail.com"><AiOutlineMail /></a>
+        <a href={instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <FaInstagram />
+        </a>
+        <a href="mailto:elijahsamuels@gmail.com" aria-label="Email">
+          <AiOutlineMail />
+        </a>
       </div>
       <div className="footer-info">
-        {copyrightAndCurrentYear()} <a href='https://www.elijahsamuels.com'>Elijah Samuels</a>
+        <span>{copyrightAndCurrentYear()}</span>
+        <a href='https://www.elijahsamuels.com' target="_blank" rel="noopener noreferrer">
+          Elijah Samuels
+        </a>
+        <span style={{ color: 'var(--border-separator)' }}>•</span>
+        <span style={{ color: 'var(--text-muted)' }}>v1.0.0</span>
       </div>
     </footer>
   );

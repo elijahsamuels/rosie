@@ -1,77 +1,258 @@
-.job-data-table {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+.why-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
 }
 
-.icon {
-	margin: 5px auto ;
-	/* margin: 0px 5px; */
-	padding: 2px 6px;
-	border: 2px solid black;
-	border-radius: 20px;
-
+.why-paragraphs-card {
+  line-height: 1.6;
 }
 
-.e2e {
-	border: 2px solid red;
-	border-radius: 20px;
-	background-color: red;
-	color: white;
+.why-paragraphs-card p {
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
-.integration {
-	border: 2px solid blue;
-	border-radius: 20px;
-	background-color: blue;
-	color: white;
+.why-paragraphs-card p:last-child {
+  margin-bottom: 0;
 }
 
-.secret-detection {
-	border: 2px solid green;
-	border-radius: 20px;
-	background-color: green;
-	color: white;
+/* GitOps Pipeline Table */
+.dashboard-table-card {
+  width: 100%;
+  overflow-x: auto;
 }
 
-.unit-test {
-	border: 2px solid purple;
-	border-radius: 20px;
-	background-color: purple;
-	color: white;
+.gitops-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-align: left;
 }
 
-.accessibility {
-	border: 2px solid orangered;
-	border-radius: 20px;
-	background-color: orangered;
-	color: white;
+.gitops-table th {
+  padding: 16px 20px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1.5px solid var(--border-separator);
 }
 
-.lighthouse {
-	border: 2px solid gray;
-	border-radius: 20px;
-	background-color: gray;
-	color: white;
+.gitops-table td {
+  padding: 16px 20px;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-separator);
+  vertical-align: middle;
 }
 
-.k6 {
-	border: 2px solid darkgreen;
-	border-radius: 20px;
-	background-color: darkgreen;
-	color: white;
+.gitops-table tbody tr {
+  transition: var(--transition-smooth);
 }
 
-.k6-loadtest-cloud {
-	border: 2px solid lightblue;
-	border-radius: 20px;
-	background-color: lightblue;
-	color: black;
+.gitops-table tbody tr:hover {
+  background-color: var(--bg-secondary);
 }
 
-.k6-loadtest-local {
-	border: 2px solid darkblue;
-	border-radius: 20px;
-	background-color: darkblue;
-	color: white;
+/* Console Badges */
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.status-success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.status-failed {
+  background: var(--error-bg);
+  color: var(--error);
+}
+
+.status-running {
+  background: rgba(0, 122, 255, 0.08);
+  color: var(--primary);
+}
+
+.stage-tag {
+  color: var(--primary);
+  background: rgba(0, 122, 255, 0.08);
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+/* Job Pills */
+.job-pill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.job-pill {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  border: none;
+}
+
+.job-pill.e2e {
+  background: rgba(255, 59, 48, 0.08);
+  color: #ff3b30;
+}
+
+.job-pill.integration {
+  background: rgba(0, 122, 255, 0.08);
+  color: var(--primary);
+}
+
+.job-pill.secret-detection {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.job-pill.unit-test {
+  background: rgba(175, 82, 222, 0.08);
+  color: #af52de;
+}
+
+.job-pill.accessibility {
+  background: rgba(255, 149, 0, 0.08);
+  color: #ff9500;
+}
+
+.job-pill.lighthouse {
+  background: rgba(142, 142, 147, 0.08);
+  color: #8e8e93;
+}
+
+.job-pill.k6, .job-pill.k6-loadtest-local {
+  background: rgba(52, 199, 89, 0.08);
+  color: #34c759;
+}
+
+.job-pill.k6-loadtest-cloud {
+  background: rgba(88, 86, 214, 0.08);
+  color: #5856d6;
+}
+
+/* Legend Styling */
+.legend-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.legend-title {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  border-bottom: 1.5px solid var(--border-separator);
+  padding-bottom: 8px;
+}
+
+.legend-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.legend-table td {
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border-low-op);
+}
+
+.legend-table td.pill-cell {
+  width: 120px;
+}
+
+.legend-table td.name-cell {
+  font-weight: 600;
+  width: 150px;
+}
+
+.legend-table td.desc-cell {
+  color: var(--text-muted);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .page-header {
+    margin-bottom: 16px;
+  }
+
+  .why-wrapper {
+    gap: 16px;
+  }
+
+  .glass-card {
+    padding: 16px;
+  }
+
+  .why-paragraphs-card p {
+    margin-bottom: 12px;
+  }
+
+  /* Make data table more compact but keep horizontal scroll */
+  .gitops-table th,
+  .gitops-table td {
+    padding: 8px 6px;
+    font-size: 0.75rem;
+    white-space: nowrap; /* Prevents awkward column squishing on narrow screens */
+  }
+
+  /* Allow job pills to wrap inside the table */
+  .gitops-table td .job-pill-container {
+    white-space: normal;
+    min-width: 150px; /* Gives the pills some room to wrap */
+  }
+
+  /* Convert legend table to stacked view for mobile */
+  .legend-table, 
+  .legend-table tbody, 
+  .legend-table tr, 
+  .legend-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .legend-table tr {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-low-op);
+  }
+
+  .legend-table tr:last-child {
+    border-bottom: none;
+  }
+
+  .legend-table td {
+    padding: 2px 0;
+    border-bottom: none;
+  }
+
+  .legend-table td.pill-cell {
+    width: auto;
+    margin-bottom: 4px;
+  }
+
+  .legend-table td.name-cell {
+    width: auto;
+    margin-bottom: 2px;
+  }
 }
